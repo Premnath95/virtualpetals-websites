@@ -17,7 +17,7 @@ This repository contains the complete modern redesign and development of the **V
 
 1. **Flagship Product – Mito:**
    - Microsoft 365 Security & Compliance Platform
-   - Official Mito Website: [mito.virtualpetals.com](https://mito.virtualpetals.com/)
+   - Official Mito Website: [http://mito.virtualpetals.com/](http://mito.virtualpetals.com/)
    - Demo Scheduling: [calendly.com/virtualpetals/30min](https://calendly.com/virtualpetals/30min)
    - 400+ automated daily security checks, 100% read-only tenant review, daily drift detection, hosted in Azure UAE North.
 2. **Strategic Partner – NETFUXION PRO:**
@@ -110,7 +110,7 @@ docker run -p 3000:3000 virtualpetals-corporate:latest
 - [x] Dedicated About Us section
 - [x] Complete IT services showcase (8 services + individual detail pages)
 - [x] Dedicated Mito product section
-- [x] Working Explore Mito button (`https://mito.virtualpetals.com/`)
+- [x] Working Launch Mito button (`http://mito.virtualpetals.com/`)
 - [x] Working Calendly demo booking button (`https://calendly.com/virtualpetals/30min`)
 - [x] Dedicated NetFuxion Pro partner section
 - [x] Original NetFuxion Pro logo displayed correctly without alterations

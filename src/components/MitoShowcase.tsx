@@ -119,7 +119,7 @@ export default function MitoShowcase() {
               rel="noopener noreferrer"
               className="gradient-button text-white font-semibold px-6 py-3.5 rounded-xl shadow-md flex items-center gap-2 text-sm sm:text-base"
             >
-              <span>Explore Mito</span>
+              <span>Launch Mito</span>
               <ArrowUpRight className="w-4 h-4" />
             </a>
 
@@ -181,7 +181,7 @@ export default function MitoShowcase() {
                 <span className="w-3 h-3 rounded-full bg-brand-green inline-block" />
               </div>
               <span className="text-xs font-mono text-gray-500 truncate max-w-xs sm:max-w-none">
-                https://mito.virtualpetals.com
+                http://mito.virtualpetals.com
               </span>
               <span className="text-[11px] font-semibold text-brand-green bg-brand-light px-2 py-0.5 rounded">
                 Verified Live UI

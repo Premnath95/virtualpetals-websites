@@ -83,7 +83,7 @@ export default function ProductsOverviewPage() {
                     rel="noopener noreferrer"
                     className="gradient-button text-white font-semibold px-6 py-3.5 rounded-xl shadow-md flex items-center gap-2 text-sm"
                   >
-                    <span>Explore Mito</span>
+                    <span>Launch Mito</span>
                     <ArrowUpRight className="w-4 h-4" />
                   </a>
 

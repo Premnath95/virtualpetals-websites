@@ -118,7 +118,7 @@ export default function MitoProductPage() {
                   rel="noopener noreferrer"
                   className="gradient-button text-white font-semibold px-7 py-3.5 rounded-xl shadow-md flex items-center gap-2 text-sm sm:text-base"
                 >
-                  <span>Explore Mito</span>
+                  <span>Launch Mito</span>
                   <ArrowUpRight className="w-4 h-4" />
                 </a>
 
@@ -290,7 +290,7 @@ export default function MitoProductPage() {
                 rel="noopener noreferrer"
                 className="bg-white text-brand-dark font-semibold px-6 py-3.5 rounded-xl hover:bg-gray-100 transition-colors flex items-center gap-1.5 text-sm"
               >
-                <span>Explore Mito</span>
+                <span>Launch Mito</span>
                 <ExternalLink className="w-4 h-4 text-brand-teal" />
               </a>
             </div>

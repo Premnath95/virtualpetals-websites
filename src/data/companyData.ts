@@ -55,8 +55,8 @@ export const COMPANY_INFO = {
     description:
       "Mito helps organisations assess their Microsoft 365 environments, identify security gaps, discover risky configurations and understand compliance concerns through automated security assessments.",
     category: "Microsoft 365 Security & Compliance Platform",
-    websiteUrl: "https://mito.virtualpetals.com/",
-    appUrl: "https://mito.virtualpetals.com/",
+    websiteUrl: "http://mito.virtualpetals.com/",
+    appUrl: "http://mito.virtualpetals.com/",
     demoUrl: "https://calendly.com/virtualpetals/30min",
     supportEmail: "mito@virtualpetals.com",
     checksCount: "400+",

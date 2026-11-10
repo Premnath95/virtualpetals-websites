@@ -89,7 +89,7 @@ export default function Navbar() {
               rel="noopener noreferrer"
               className="text-xs font-semibold text-brand-dark px-3 py-2 rounded-lg hover:bg-brand-light transition-colors flex items-center gap-1 border border-brand-teal/20"
             >
-              <span>Explore Mito</span>
+              <span>Launch Mito</span>
               <ArrowUpRight className="w-3.5 h-3.5 text-brand-teal" />
             </Link>
 
@@ -164,7 +164,7 @@ export default function Navbar() {
               onClick={() => setMobileMenuOpen(false)}
               className="w-full text-center py-2.5 px-4 rounded-lg font-medium text-brand-dark bg-brand-light border border-brand-teal/20 flex items-center justify-center gap-1.5"
             >
-              <span>Explore Mito</span>
+              <span>Launch Mito</span>
               <ArrowUpRight className="w-4 h-4 text-brand-teal" />
             </Link>
 
