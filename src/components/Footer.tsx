@@ -98,6 +98,11 @@ export default function Footer() {
                   Partners Ecosystem
                 </Link>
               </li>
+              <li>
+                <Link href="/#testimonials" className="text-gray-300 hover:text-white transition-colors">
+                  Client Stories
+                </Link>
+              </li>
             </ul>
           </div>
 

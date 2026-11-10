@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Sparkles, Target, Eye, Shield, Users, ArrowRight, MapPin, CheckCircle2 } from "lucide-react";
 import { COMPANY_INFO } from "@/data/companyData";
+import TestimonialsSection from "@/components/TestimonialsSection";
 
 export const metadata: Metadata = {
   title: "About Us | Technology That Moves Your Business Forward",
@@ -153,6 +154,9 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      {/* Client Success Stories */}
+      <TestimonialsSection />
     </div>
   );
 }

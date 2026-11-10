@@ -5,6 +5,7 @@ import ServicesSection from "@/components/ServicesSection";
 import MitoShowcase from "@/components/MitoShowcase";
 import PartnerSection from "@/components/PartnerSection";
 import WhyChooseUs from "@/components/WhyChooseUs";
+import TestimonialsSection from "@/components/TestimonialsSection";
 import TechEcosystem from "@/components/TechEcosystem";
 import MitoDemoBooking from "@/components/MitoDemoBooking";
 import ContactForm from "@/components/ContactForm";
@@ -30,7 +31,10 @@ export default function HomePage() {
       {/* 6. Why Choose Virtual Petals */}
       <WhyChooseUs />
 
-      {/* 7. Our Technology Ecosystem */}
+      {/* 7. Client Success Stories (Authentic Testimonials) */}
+      <TestimonialsSection />
+
+      {/* 8. Our Technology Ecosystem */}
       <TechEcosystem />
 
       {/* 8. Mito Demo Booking */}
