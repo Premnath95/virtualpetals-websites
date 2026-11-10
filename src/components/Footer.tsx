@@ -69,7 +69,7 @@ export default function Footer() {
                 className="text-xs px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:border-brand-teal/40 transition-all flex items-center gap-1.5"
               >
                 <Shield className="w-3.5 h-3.5 text-brand-teal" />
-                <span>Mito Security App</span>
+                <span>Explore Mito</span>
               </Link>
             </div>
           </div>
@@ -117,7 +117,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="text-gray-300 hover:text-brand-teal transition-colors flex items-center gap-1"
                 >
-                  <span>Launch Mito</span>
+                  <span>Explore Mito</span>
                   <ArrowUpRight className="w-3.5 h-3.5" />
                 </a>
               </li>
