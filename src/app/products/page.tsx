@@ -78,7 +78,7 @@ export default function ProductsOverviewPage() {
 
                 <div className="pt-4 flex flex-wrap items-center gap-4">
                   <a
-                    href={COMPANY_INFO.product.appUrl}
+                    href="http://mito.virtualpetals.com/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="gradient-button text-white font-semibold px-6 py-3.5 rounded-xl shadow-md flex items-center gap-2 text-sm"

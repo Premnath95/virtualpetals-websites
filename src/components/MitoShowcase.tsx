@@ -114,10 +114,12 @@ export default function MitoShowcase() {
           {/* Primary Action Buttons */}
           <div className="pt-4 flex flex-wrap items-center justify-center gap-4">
             <a
-              href={COMPANY_INFO.product.appUrl}
+              id="mito-launch-button"
+              data-testid="launch-mito-button"
+              href="http://mito.virtualpetals.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="gradient-button text-white font-semibold px-6 py-3.5 rounded-xl shadow-md flex items-center gap-2 text-sm sm:text-base"
+              className="gradient-button text-white font-semibold px-6 py-3.5 rounded-xl shadow-md flex items-center gap-2 text-sm sm:text-base cursor-pointer"
             >
               <span>Launch Mito</span>
               <ArrowUpRight className="w-4 h-4" />

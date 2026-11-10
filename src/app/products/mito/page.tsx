@@ -113,7 +113,7 @@ export default function MitoProductPage() {
 
               <div className="pt-2 flex flex-wrap items-center gap-4">
                 <a
-                  href={COMPANY_INFO.product.appUrl}
+                  href="http://mito.virtualpetals.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="gradient-button text-white font-semibold px-7 py-3.5 rounded-xl shadow-md flex items-center gap-2 text-sm sm:text-base"
@@ -285,7 +285,7 @@ export default function MitoProductPage() {
               </a>
 
               <a
-                href={COMPANY_INFO.product.appUrl}
+                href="http://mito.virtualpetals.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white text-brand-dark font-semibold px-6 py-3.5 rounded-xl hover:bg-gray-100 transition-colors flex items-center gap-1.5 text-sm"
