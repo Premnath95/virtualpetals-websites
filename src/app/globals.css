@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary-green: #35A853;
+    --primary-teal: #12B8A6;
+    --dark-green: #123B32;
+    --light-green: #F3FAF6;
+    --charcoal: #253B38;
+    --soft-grey: #F5F7F6;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color: var(--charcoal);
+    background-color: #ffffff;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+
+  body {
+    overflow-x: hidden;
+    background-color: #ffffff;
+    color: #253B38;
+  }
+
+  ::selection {
+    background-color: #35A853;
+    color: #ffffff;
+  }
+}
+
+@layer utilities {
+  .gradient-hero {
+    background: radial-gradient(120% 120% at 50% 10%, rgba(18, 184, 166, 0.08) 0%, rgba(53, 168, 83, 0.04) 40%, rgba(255, 255, 255, 0) 80%);
+  }
+  
+  .gradient-card-accent {
+    background: linear-gradient(135deg, rgba(53, 168, 83, 0.06) 0%, rgba(18, 184, 166, 0.06) 100%);
+  }
+
+  .gradient-button {
+    background: linear-gradient(135deg, #35A853 0%, #2DA04B 100%);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .gradient-button:hover {
+    background: linear-gradient(135deg, #2EA04B 0%, #258D3F 100%);
+    box-shadow: 0 4px 14px 0 rgba(53, 168, 83, 0.35);
+    transform: translateY(-1px);
+  }
+
+  .gradient-teal-button {
+    background: linear-gradient(135deg, #12B8A6 0%, #0F9B8C 100%);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .gradient-teal-button:hover {
+    background: linear-gradient(135deg, #0F9B8C 0%, #0D8276 100%);
+    box-shadow: 0 4px 14px 0 rgba(18, 184, 166, 0.35);
+    transform: translateY(-1px);
+  }
+
+  .glass-header {
+    backdrop-filter: blur(12px);
+    background-color: rgba(255, 255, 255, 0.92);
+  }
+
+  .border-brand-soft {
+    border-color: rgba(53, 168, 83, 0.15);
+  }
+}
