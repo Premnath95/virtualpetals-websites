@@ -64,9 +64,9 @@ export const COMPANY_INFO = {
   partner: {
     name: "NETFUXION PRO",
     subtitle: "IT SOLUTIONS",
-    heading: "Our Technology Partner Ecosystem.",
+    heading: "Our Business Entities",
     description:
-      "NetFuxion Pro is featured as a technology partner within the Virtual Petals ecosystem.",
+      "NetFuxion Pro is a registered business entity in India, operated and managed by Virtual Petals.",
     logoPath: "/partners/netfuxion-pro-logo.png",
   },
   demoUrl: "https://calendly.com/virtualpetals/30min",

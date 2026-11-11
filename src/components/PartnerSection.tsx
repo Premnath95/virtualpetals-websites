@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Handshake, ArrowRight, ShieldCheck, CheckCircle2, Globe, Cpu } from "lucide-react";
+import { Building2, ArrowRight } from "lucide-react";
 import { COMPANY_INFO } from "@/data/companyData";
 
 export default function PartnerSection() {
@@ -11,24 +11,24 @@ export default function PartnerSection() {
         {/* Section Heading */}
         <div className="max-w-3xl mx-auto text-center space-y-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-light border border-brand-teal/20 text-brand-dark text-xs font-semibold tracking-wide uppercase">
-            Collaborative Ecosystem
+            Corporate Operations
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-brand-dark tracking-tight">
-            {COMPANY_INFO.partner.heading}
+            Our Business Entities
           </h2>
           <p className="text-base sm:text-lg text-brand-charcoal/80 leading-relaxed">
-            We collaborate with strategic technology partners to extend technical capabilities, deliver integrated enterprise services, and accelerate business modernization.
+            Registered business entities operated and managed under Virtual Petals to support corporate technology services and enterprise operations.
           </p>
         </div>
 
-        {/* Featured Partner Showcase Card */}
+        {/* Business Entity Showcase Card */}
         <div className="mt-14 max-w-4xl mx-auto">
           <div className="bg-white rounded-3xl border border-gray-200/90 shadow-card hover:shadow-cardHover transition-all duration-300 p-8 sm:p-12 relative overflow-hidden">
             {/* Subtle corner accent */}
             <div className="absolute top-0 right-0 w-44 h-44 bg-gradient-to-bl from-brand-green/10 via-brand-teal/5 to-transparent rounded-bl-full pointer-events-none" />
 
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-              {/* Partner Official Logo in clean white container */}
+              {/* Official Logo in clean white container */}
               <div className="md:col-span-5 flex flex-col items-center justify-center p-6 bg-white border border-gray-100 rounded-2xl shadow-subtle">
                 <div className="relative w-full max-w-[220px] aspect-[1/1] flex items-center justify-center">
                   <Image
@@ -44,17 +44,17 @@ export default function PartnerSection() {
                   <span className="text-xs font-bold text-brand-dark tracking-wider uppercase block">
                     NETFUXION PRO
                   </span>
-                  <span className="text-[11px] text-gray-400 font-medium tracking-widest uppercase">
-                    Strategic Technology Partner
+                  <span className="text-[11px] text-brand-teal font-semibold tracking-wider uppercase">
+                    REGISTERED BUSINESS ENTITY – INDIA
                   </span>
                 </div>
               </div>
 
-              {/* Partner Profile Information */}
+              {/* Profile Information */}
               <div className="md:col-span-7 space-y-5">
                 <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-teal-50 text-brand-teal text-xs font-semibold">
-                  <Handshake className="w-3.5 h-3.5" />
-                  <span>Featured Partner</span>
+                  <Building2 className="w-3.5 h-3.5" />
+                  <span>Virtual Petals Business Entity</span>
                 </div>
 
                 <h3 className="text-2xl sm:text-3xl font-extrabold text-brand-dark">
@@ -62,25 +62,8 @@ export default function PartnerSection() {
                 </h3>
 
                 <p className="text-sm sm:text-base text-brand-charcoal/85 leading-relaxed">
-                  {COMPANY_INFO.partner.description}
+                  NetFuxion Pro is a registered business entity in India, operated and managed by Virtual Petals.
                 </p>
-
-                {/* Partner Areas */}
-                <div className="space-y-2.5 pt-2">
-                  <h4 className="text-xs font-bold text-gray-400 tracking-wider uppercase">
-                    Partner Technology Collaboration
-                  </h4>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-brand-charcoal/90">
-                    <div className="flex items-center gap-2 p-2 rounded-lg bg-gray-50 border border-gray-100">
-                      <Cpu className="w-3.5 h-3.5 text-brand-green shrink-0" />
-                      <span>IT Solutions Engineering</span>
-                    </div>
-                    <div className="flex items-center gap-2 p-2 rounded-lg bg-gray-50 border border-gray-100">
-                      <ShieldCheck className="w-3.5 h-3.5 text-brand-teal shrink-0" />
-                      <span>Enterprise Technology Delivery</span>
-                    </div>
-                  </div>
-                </div>
 
                 {/* Action Buttons */}
                 <div className="pt-4 flex flex-wrap items-center gap-3">
@@ -88,15 +71,15 @@ export default function PartnerSection() {
                     href="/partners"
                     className="gradient-button text-white text-xs sm:text-sm font-semibold px-5 py-2.5 rounded-xl shadow-xs flex items-center gap-1.5"
                   >
-                    <span>View Partner Details</span>
+                    <span>View Business Details</span>
                     <ArrowRight className="w-4 h-4" />
                   </Link>
 
                   <Link
-                    href="/contact?subject=Partnership"
+                    href="/contact"
                     className="bg-white border border-gray-200 text-brand-dark hover:bg-brand-light text-xs sm:text-sm font-semibold px-5 py-2.5 rounded-xl transition-colors"
                   >
-                    <span>Connect with Partner Team</span>
+                    <span>Contact Virtual Petals</span>
                   </Link>
                 </div>
               </div>

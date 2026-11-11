@@ -25,7 +25,7 @@ export default function HomePage() {
       {/* 4. Our Product – MITO Showcase */}
       <MitoShowcase />
 
-      {/* 5. Strategic Partner – NETFUXION PRO */}
+      {/* 5. Business Entity – NETFUXION PRO */}
       <PartnerSection />
 
       {/* 6. Why Choose Virtual Petals */}
