@@ -1,35 +1,47 @@
 import React from "react";
 import HeroSection from "@/components/HeroSection";
-import ClientLogosTicker from "@/components/ClientLogosTicker";
+import AboutSection from "@/components/AboutSection";
 import ServicesSection from "@/components/ServicesSection";
 import MitoShowcase from "@/components/MitoShowcase";
-import TestimonialsSection from "@/components/TestimonialsSection";
 import PartnerSection from "@/components/PartnerSection";
-import ConsultationCTA from "@/components/ConsultationCTA";
+import WhyChooseUs from "@/components/WhyChooseUs";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import TechEcosystem from "@/components/TechEcosystem";
+import MitoDemoBooking from "@/components/MitoDemoBooking";
+import ContactForm from "@/components/ContactForm";
 
 export default function HomePage() {
   return (
     <>
-      {/* 1. Hero Section with 3D WebGL Cloud Topology & Control Plane */}
+      {/* 1. Hero Section */}
       <HeroSection />
 
-      {/* 2. Authentic Global Client Logos Ticker */}
-      <ClientLogosTicker />
+      {/* 2. About Virtual Petals */}
+      <AboutSection />
 
-      {/* 3. 7 Core Enterprise Practice Areas (Bento Grid) */}
+      {/* 3. Our Services (8 Premium Cards) */}
       <ServicesSection />
 
-      {/* 4. Dedicated "Our Products" Section – MITO Platform */}
+      {/* 4. Our Product – MITO Showcase */}
       <MitoShowcase />
 
-      {/* 5. Authentic Client Success Stories & Testimonials */}
-      <TestimonialsSection />
-
-      {/* 6. Virtual Petals Business Entities – NetFuxion Pro */}
+      {/* 5. Business Entity – NETFUXION PRO */}
       <PartnerSection />
 
-      {/* 7. High-Converting Consultation & Direct Booking CTA */}
-      <ConsultationCTA />
+      {/* 6. Why Choose Virtual Petals */}
+      <WhyChooseUs />
+
+      {/* 7. Client Success Stories (Authentic Testimonials) */}
+      <TestimonialsSection />
+
+      {/* 8. Our Technology Ecosystem */}
+      <TechEcosystem />
+
+      {/* 8. Mito Demo Booking */}
+      <MitoDemoBooking />
+
+      {/* 9. General Contact Section */}
+      <ContactForm />
     </>
   );
 }

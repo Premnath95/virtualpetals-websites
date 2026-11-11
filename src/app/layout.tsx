@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { ThemeProvider } from "@/context/ThemeContext";
 import "./globals.css";
 import { COMPANY_INFO } from "@/data/companyData";
 
@@ -31,6 +30,13 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
   openGraph: {
     type: "website",
@@ -48,6 +54,13 @@ export const metadata: Metadata = {
         alt: "Virtual Petals - Empowering Businesses Through Intelligent Technology",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Virtual Petals | Modern IT Solutions",
+    description:
+      "Virtual Petals delivers innovative cloud solutions, Microsoft technologies, cybersecurity and modern IT services.",
+    images: ["/brand/virtualpetals-logo.png"],
   },
 };
 
@@ -86,25 +99,17 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className="scroll-smooth light" suppressHydrationWarning>
+    <html lang="en" className="scroll-smooth">
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
-          rel="stylesheet"
-        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-screen flex flex-col antialiased bg-[#030712] text-slate-100 transition-colors duration-300">
-        <ThemeProvider>
-          <Navbar />
-          <main className="flex-grow">{children}</main>
-          <Footer />
-        </ThemeProvider>
+      <body className="min-h-screen flex flex-col antialiased bg-white text-brand-charcoal selection:bg-brand-green selection:text-white">
+        <Navbar />
+        <main className="flex-grow">{children}</main>
+        <Footer />
       </body>
     </html>
   );
