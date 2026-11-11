@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { Quote, Sparkles, CheckCircle2, ShieldCheck } from "lucide-react";
+import { Quote, Sparkles, CheckCircle2 } from "lucide-react";
 import { TESTIMONIALS_DATA, TestimonialItem } from "@/data/testimonialsData";
 
 const REGION_FILTERS = [
@@ -33,16 +33,16 @@ export default function TestimonialsSection() {
 
       {/* Section Header */}
       <div className="max-w-3xl mx-auto text-center space-y-4 mb-14">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full gradient-badge text-xs font-semibold text-violet-300 dark:text-violet-300 light:text-violet-700 tracking-wider uppercase">
-          <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full gradient-badge text-xs font-semibold text-violet-700 dark:text-violet-300 tracking-wider uppercase">
+          <Sparkles className="w-3.5 h-3.5 text-blue-600 dark:text-cyan-400" />
           <span>Real Client Results &amp; Experiences</span>
         </div>
 
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white dark:text-white light:text-slate-900 tracking-tight">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
           Trusted by Businesses Across the Globe
         </h2>
 
-        <p className="text-sm sm:text-base text-slate-300 dark:text-slate-300 light:text-slate-600 leading-relaxed">
+        <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
           From cloud infrastructure and Microsoft 365 to Azure migrations, DevOps, and managed IT services, Virtual Petals is proud to support organisations with practical technology solutions.
         </p>
 
@@ -56,8 +56,8 @@ export default function TestimonialsSection() {
                 onClick={() => setSelectedRegion(tab.id)}
                 className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 flex items-center gap-1.5 ${
                   isActive
-                    ? "bg-gradient-to-r from-blue-600 to-violet-600 text-white shadow-md ring-2 ring-violet-500/30"
-                    : "glass-panel text-slate-300 dark:text-slate-300 light:text-slate-700 hover:text-white dark:hover:text-white light:hover:text-blue-600 border-slate-800"
+                    ? "btn-gradient-primary text-white shadow-md ring-2 ring-violet-500/30"
+                    : "glass-panel text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-white border-slate-200 dark:border-slate-800"
                 }`}
               >
                 {tab.flag && <span>{tab.flag}</span>}
@@ -66,7 +66,7 @@ export default function TestimonialsSection() {
                   className={`text-[10px] px-1.5 py-0.2 rounded-full ${
                     isActive
                       ? "bg-white/20 text-white"
-                      : "bg-slate-800 dark:bg-slate-800 light:bg-slate-200 text-slate-400"
+                      : "bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400"
                   }`}
                 >
                   {tab.count}
@@ -86,8 +86,8 @@ export default function TestimonialsSection() {
 
       {/* Trust Notice */}
       <div className="mt-14 text-center">
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl glass-panel text-xs text-slate-300 dark:text-slate-300 light:text-slate-600 shadow-sm">
-          <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0" />
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl glass-panel text-xs text-slate-600 dark:text-slate-300 border-slate-200 dark:border-slate-800 shadow-sm">
+          <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-cyan-400 shrink-0" />
           <span>All testimonials shown are authentic reviews from enterprise engagements with Virtual Petals.</span>
         </div>
       </div>
@@ -111,7 +111,7 @@ function TestimonialCard({ item }: { item: TestimonialItem }) {
         {/* Card Header */}
         <div className="flex items-start justify-between gap-3 mb-4">
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-full bg-white p-1 overflow-hidden shrink-0 border border-slate-700 shadow-sm flex items-center justify-center">
+            <div className="w-12 h-12 rounded-full bg-white p-1 overflow-hidden shrink-0 border border-slate-200 dark:border-slate-700 shadow-xs flex items-center justify-center">
               <Image
                 src={item.logoPath}
                 alt={`${item.clientName} logo`}
@@ -122,17 +122,17 @@ function TestimonialCard({ item }: { item: TestimonialItem }) {
               />
             </div>
             <div>
-              <h3 className="font-bold text-white dark:text-white light:text-slate-900 text-sm sm:text-base leading-tight group-hover:text-blue-400 transition-colors">
+              <h3 className="font-bold text-slate-900 dark:text-white text-sm sm:text-base leading-tight group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                 {item.clientName}
               </h3>
-              <p className="text-xs text-slate-400 dark:text-slate-400 light:text-slate-500 font-medium mt-0.5">
+              <p className="text-xs text-slate-500 dark:text-slate-400 font-medium mt-0.5">
                 {item.designation}
               </p>
             </div>
           </div>
 
           {/* Country Pill */}
-          <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold bg-slate-900/80 dark:bg-slate-900/80 light:bg-slate-100 text-slate-300 dark:text-slate-300 light:text-slate-700 border border-slate-800 dark:border-slate-800 light:border-slate-200 shrink-0">
+          <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold bg-slate-100 dark:bg-slate-900/80 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 shrink-0">
             <span>{FLAG_MAP[item.countryCode] || "🌐"}</span>
             <span>{item.location}</span>
           </span>
@@ -140,20 +140,20 @@ function TestimonialCard({ item }: { item: TestimonialItem }) {
 
         {/* Verbatim Quote */}
         <div className="relative pt-2">
-          <Quote className="w-5 h-5 text-violet-400/40 mb-2 transform -scale-x-100" />
-          <p className="text-xs sm:text-sm text-slate-300 dark:text-slate-300 light:text-slate-700 leading-relaxed italic">
+          <Quote className="w-5 h-5 text-violet-500/40 mb-2 transform -scale-x-100" />
+          <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed italic">
             &ldquo;{item.quote}&rdquo;
           </p>
         </div>
       </div>
 
       {/* Card Footer: Project Tag */}
-      <div className="mt-6 pt-4 border-t border-slate-800/80 dark:border-slate-800/80 light:border-slate-200 flex items-center justify-between gap-2">
-        <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] font-medium bg-blue-950/40 dark:bg-blue-950/40 light:bg-blue-50 text-blue-300 dark:text-blue-300 light:text-blue-800 border border-blue-800/30 dark:border-blue-800/30 light:border-blue-200 max-w-full truncate">
-          <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0" />
+      <div className="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between gap-2">
+        <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] font-medium bg-blue-50 dark:bg-blue-950/40 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800/30 max-w-full truncate">
+          <span className="w-1.5 h-1.5 rounded-full bg-blue-600 dark:bg-cyan-400 shrink-0" />
           <span className="truncate">{item.project}</span>
         </div>
-        <span className="text-[10px] font-semibold text-slate-500 uppercase tracking-wider shrink-0">
+        <span className="text-[10px] font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wider shrink-0">
           Verified
         </span>
       </div>
