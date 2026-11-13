@@ -126,18 +126,6 @@ export default function ContactForm() {
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div className="space-y-1">
-                  <h3 className="font-bold text-brand-dark text-base">India Delivery Center</h3>
-                  <p className="text-xs text-brand-charcoal/85 leading-relaxed">
-                    Chennai, Tamil Nadu - 603202, India
-                  </p>
-                </div>
-              </div>
-
-              <div className="bg-white rounded-2xl p-6 border border-gray-200/80 shadow-subtle flex items-start gap-4">
-                <div className="w-10 h-10 rounded-xl bg-brand-light flex items-center justify-center text-brand-green shrink-0">
-                  <MapPin className="w-5 h-5" />
-                </div>
-                <div className="space-y-1">
                   <h3 className="font-bold text-brand-dark text-base">NetFuxion Pro Office</h3>
                   <p className="text-xs text-brand-charcoal/85 leading-relaxed">
                     Plot No. 12 4th South Cross St, Kovai Thirunagar 4th St, Indira Nagar, Civil Aerodrome Post, Nehru Nagar West, Coimbatore, Tamil Nadu 641014

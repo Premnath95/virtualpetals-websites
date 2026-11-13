@@ -79,8 +79,8 @@ export default function AboutPage() {
                 <div className="bg-white rounded-xl p-4 border border-gray-100 shadow-xs flex items-start gap-3">
                   <MapPin className="w-5 h-5 text-brand-green shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="font-bold text-sm text-brand-dark">India Technology Center</h4>
-                    <p className="text-xs text-gray-500">{COMPANY_INFO.contacts.india.address}</p>
+                    <h4 className="font-bold text-sm text-brand-dark">NetFuxion Pro Office</h4>
+                    <p className="text-xs text-gray-500">{COMPANY_INFO.contacts.netfuxion.address}</p>
                   </div>
                 </div>
               </div>

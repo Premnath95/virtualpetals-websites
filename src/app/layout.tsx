@@ -89,9 +89,10 @@ export default function RootLayout({
       },
       {
         "@type": "PostalAddress",
-        addressLocality: "Chennai",
+        streetAddress: "Plot No. 12 4th South Cross St, Kovai Thirunagar 4th St, Indira Nagar, Nehru Nagar West",
+        addressLocality: "Coimbatore",
         addressRegion: "Tamil Nadu",
-        postalCode: "603202",
+        postalCode: "641014",
         addressCountry: "IN",
       },
     ],

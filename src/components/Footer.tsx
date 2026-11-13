@@ -35,12 +35,6 @@ export default function Footer() {
               <div className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-brand-green shrink-0 mt-0.5" />
                 <span>
-                  <strong className="text-white">India:</strong> Chennai, Tamil Nadu - 603202, India
-                </span>
-              </div>
-              <div className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-brand-teal shrink-0 mt-0.5" />
-                <span>
                   <strong className="text-white">NetFuxion Pro:</strong> Plot No. 12 4th South Cross St, Kovai Thirunagar 4th St, Indira Nagar, Civil Aerodrome Post, Nehru Nagar West, Coimbatore, Tamil Nadu 641014
                 </span>
               </div>
