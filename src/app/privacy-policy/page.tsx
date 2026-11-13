@@ -84,7 +84,7 @@ export default function PrivacyPolicyPage() {
             <div className="bg-brand-light p-4 rounded-xl border border-brand-green/20 mt-3 text-xs space-y-1">
               <p><strong>Virtual Petals Private Limited</strong></p>
               <p>Address: Level 36, Etihad Towers 3, Abu Dhabi, United Arab Emirates (P.O. Box: 28686)</p>
-              <p>India Center: Chennai, Tamil Nadu - 603202, India</p>
+              <p>India Business Entity (NetFuxion Pro): Plot No. 12 4th South Cross St, Kovai Thirunagar 4th St, Indira Nagar, Civil Aerodrome Post, Nehru Nagar West, Coimbatore, Tamil Nadu 641014</p>
               <p>Email: <a href="mailto:contactus@virtualpetals.com" className="text-brand-green font-semibold">contactus@virtualpetals.com</a></p>
               <p>Phone: +971 2 409 3026</p>
             </div>

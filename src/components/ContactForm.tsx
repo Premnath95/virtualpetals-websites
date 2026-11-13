@@ -99,10 +99,10 @@ export default function ContactForm() {
                 Direct Consultation
               </div>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-brand-dark tracking-tight">
-                Let's Build Something Great Together.
+                Let's Solve Your Next Technology Challenge.
               </h2>
               <p className="text-brand-charcoal/80 text-base leading-relaxed">
-                Looking for reliable IT solutions? Connect with our team to discuss your technology requirements.
+                Whether modernising your Microsoft cloud, strengthening cybersecurity, automating deployments or optimising IT infrastructure, Virtual Petals brings enterprise expertise to your initiatives.
               </p>
             </div>
 
@@ -164,6 +164,27 @@ export default function ContactForm() {
                       {COMPANY_INFO.contacts.emails.contact}
                     </a>
                   </p>
+                </div>
+              </div>
+
+              {/* Direct Calendly Booking */}
+              <div className="p-5 rounded-2xl bg-brand-light/70 border border-brand-green/20 space-y-2.5">
+                <span className="text-xs font-bold uppercase tracking-wider text-brand-dark block">
+                  Prefer an Immediate Discussion?
+                </span>
+                <p className="text-xs text-brand-charcoal/80 leading-relaxed">
+                  Schedule a 30-minute introductory architecture session directly with our senior cloud consulting team.
+                </p>
+                <div className="pt-1">
+                  <a
+                    href="https://calendly.com/virtualpetals/30min"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="gradient-button text-white text-xs sm:text-sm font-semibold px-4 py-2.5 rounded-xl shadow-xs inline-flex items-center gap-2"
+                  >
+                    <span>Schedule via Calendly</span>
+                    <Send className="w-3.5 h-3.5" />
+                  </a>
                 </div>
               </div>
             </div>

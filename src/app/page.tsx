@@ -1,46 +1,50 @@
 import React from "react";
 import HeroSection from "@/components/HeroSection";
-import AboutSection from "@/components/AboutSection";
-import ServicesSection from "@/components/ServicesSection";
+import CompanyStorySection from "@/components/CompanyStorySection";
+import EnterpriseServicesSection from "@/components/EnterpriseServicesSection";
+import BusinessOutcomesSection from "@/components/BusinessOutcomesSection";
 import MitoShowcase from "@/components/MitoShowcase";
-import PartnerSection from "@/components/PartnerSection";
-import WhyChooseUs from "@/components/WhyChooseUs";
 import TestimonialsSection from "@/components/TestimonialsSection";
+import PartnerSection from "@/components/PartnerSection";
 import TechEcosystem from "@/components/TechEcosystem";
-import MitoDemoBooking from "@/components/MitoDemoBooking";
+import InsightsSection from "@/components/InsightsSection";
+import WhyVirtualPetalsSection from "@/components/WhyVirtualPetalsSection";
 import ContactForm from "@/components/ContactForm";
 
 export default function HomePage() {
   return (
     <>
-      {/* 1. Hero Section */}
+      {/* 1. Hero Section – Enterprise Editorial Hero */}
       <HeroSection />
 
-      {/* 2. About Virtual Petals */}
-      <AboutSection />
+      {/* 2. Who We Are – Company Story (Section 6) */}
+      <CompanyStorySection />
 
-      {/* 3. Our Services (8 Premium Cards) */}
-      <ServicesSection />
+      {/* 3. What We Do – Enterprise Service Architecture (Section 7) */}
+      <EnterpriseServicesSection />
 
-      {/* 4. Our Product – MITO Showcase */}
+      {/* 4. How We Help – Business Outcomes 01-04 (Section 8) */}
+      <BusinessOutcomesSection />
+
+      {/* 5. Proprietary SaaS Product – MITO Showcase (Section 9) */}
       <MitoShowcase />
 
-      {/* 5. Business Entity – NETFUXION PRO */}
-      <PartnerSection />
-
-      {/* 6. Why Choose Virtual Petals */}
-      <WhyChooseUs />
-
-      {/* 7. Client Success Stories (Authentic Testimonials) */}
+      {/* 6. Client Success Stories – 15 Authentic Testimonials (Section 10) */}
       <TestimonialsSection />
 
-      {/* 8. Our Technology Ecosystem */}
+      {/* 7. Our Business Entities – NetFuxion Pro Registered Entity (Section 11) */}
+      <PartnerSection />
+
+      {/* 8. Technology Ecosystem & Partner Standards (Section 12) */}
       <TechEcosystem />
 
-      {/* 8. Mito Demo Booking */}
-      <MitoDemoBooking />
+      {/* 9. Insights & Thought Leadership (Section 13) */}
+      <InsightsSection />
 
-      {/* 9. General Contact Section */}
+      {/* 10. Why Virtual Petals – Your Technology Partner for What's Next (Section 14) */}
+      <WhyVirtualPetalsSection />
+
+      {/* 11. Enterprise Call to Action & Direct Consultation (Section 15) */}
       <ContactForm />
     </>
   );

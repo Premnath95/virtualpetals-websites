@@ -2,187 +2,229 @@
 
 import React from "react";
 import Link from "next/link";
-import { ArrowRight, ShieldCheck, Cloud, Cpu, Lock, CheckCircle2, Server, Terminal } from "lucide-react";
+import {
+  ArrowRight,
+  ShieldCheck,
+  Cloud,
+  Cpu,
+  Lock,
+  CheckCircle2,
+  Server,
+  Activity,
+  Layers,
+  Terminal,
+  Globe,
+  Sparkles,
+  ArrowUpRight,
+} from "lucide-react";
 import { COMPANY_INFO } from "@/data/companyData";
 
 export default function HeroSection() {
   return (
-    <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden gradient-hero">
-      {/* Subtle background decorative shapes */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[360px] bg-gradient-to-tr from-brand-green/10 via-brand-teal/10 to-transparent blur-3xl pointer-events-none rounded-full" />
-      <div className="absolute top-12 right-10 w-72 h-72 bg-brand-light rounded-full blur-2xl pointer-events-none opacity-60" />
+    <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden bg-white">
+      {/* Background Architectural Grid & Gradients */}
+      <div className="absolute inset-0 bg-[radial-gradient(#35a853_1px,transparent_1px)] [background-size:32px_32px] opacity-[0.035] pointer-events-none" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[450px] bg-gradient-to-tr from-brand-green/10 via-brand-teal/8 to-transparent blur-3xl pointer-events-none rounded-full" />
+      <div className="absolute top-16 right-10 w-96 h-96 bg-brand-light/70 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          {/* Left Text Column */}
-          <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+          {/* Left Text Column: Enterprise Editorial Presentation */}
+          <div className="lg:col-span-7 space-y-7 text-center lg:text-left">
             {/* Pill Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-light border border-brand-teal/20 shadow-xs">
+            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-brand-light border border-brand-teal/20 shadow-xs">
               <span className="flex h-2 w-2 rounded-full bg-brand-green animate-pulse" />
-              <span className="text-xs font-semibold text-brand-dark tracking-wide uppercase">
-                Modern Microsoft Cloud & Security Architecture
+              <span className="text-xs font-bold text-brand-dark tracking-wider uppercase">
+                Enterprise Cloud & Modern Workplace Architecture
               </span>
             </div>
 
-            {/* Main Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-brand-dark tracking-tight leading-[1.12]">
-              Empowering Businesses Through{" "}
+            {/* Main Editorial Headline */}
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-brand-dark tracking-tight leading-[1.1] text-balance">
+              Transforming Business Through{" "}
               <span className="bg-gradient-to-r from-brand-green via-brand-teal to-brand-green bg-clip-text text-transparent">
-                Intelligent Technology.
+                Smarter Technology.
               </span>
             </h1>
 
             {/* Supporting Description */}
-            <p className="text-lg sm:text-xl text-brand-charcoal/90 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-              Virtual Petals delivers innovative cloud solutions, Microsoft technologies, cybersecurity and modern IT services that help businesses transform, scale and succeed.
+            <p className="text-lg sm:text-xl text-brand-charcoal/90 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-normal">
+              Virtual Petals helps organisations modernise, secure and optimise their IT environments through Microsoft cloud solutions, cybersecurity, DevOps and intelligent technology services.
             </p>
 
-            {/* Action Buttons */}
+            {/* Primary & Secondary Action CTAs */}
             <div className="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
               <Link
-                href="/services"
-                className="w-full sm:w-auto gradient-button text-white font-semibold px-7 py-3.5 rounded-xl shadow-md flex items-center justify-center gap-2 group text-base"
+                href="#services"
+                className="w-full sm:w-auto gradient-button text-white font-semibold px-8 py-4 rounded-xl shadow-md hover:shadow-lg flex items-center justify-center gap-2.5 group text-base transition-all duration-200"
               >
                 <span>Explore Our Services</span>
                 <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
               </Link>
 
               <Link
-                href="/contact"
-                className="w-full sm:w-auto bg-white border border-gray-200 hover:border-brand-teal/40 text-brand-dark hover:bg-brand-light font-semibold px-7 py-3.5 rounded-xl transition-all flex items-center justify-center gap-2 text-base shadow-xs"
+                href="#contact"
+                className="w-full sm:w-auto bg-white border border-gray-300 hover:border-brand-teal text-brand-dark hover:bg-brand-light/60 font-semibold px-8 py-4 rounded-xl transition-all flex items-center justify-center gap-2 text-base shadow-xs"
               >
-                <span>Talk to Our Experts</span>
+                <span>Consult Our Experts</span>
               </Link>
             </div>
 
-            {/* Micro Highlights */}
-            <div className="pt-6 border-t border-gray-200/80 grid grid-cols-3 gap-3 sm:gap-6 text-left">
+            {/* Editorial Micro-Metrics & Enterprise Highlights */}
+            <div className="pt-8 border-t border-gray-100 grid grid-cols-3 gap-4 sm:gap-8 text-left">
               <div>
-                <div className="flex items-center gap-1.5 text-brand-dark font-bold text-lg sm:text-xl">
-                  <span>Zero Trust</span>
+                <div className="text-xl sm:text-2xl font-extrabold text-brand-dark tracking-tight">
+                  Zero Trust
                 </div>
-                <p className="text-xs text-gray-500 font-medium">Security First</p>
+                <p className="text-xs text-brand-charcoal/70 font-medium mt-0.5">
+                  Security-First Architecture
+                </p>
               </div>
 
               <div>
-                <div className="flex items-center gap-1.5 text-brand-dark font-bold text-lg sm:text-xl">
-                  <span>UAE & Global</span>
+                <div className="text-xl sm:text-2xl font-extrabold text-brand-green tracking-tight">
+                  Microsoft
                 </div>
-                <p className="text-xs text-gray-500 font-medium">Enterprise Delivery</p>
+                <p className="text-xs text-brand-charcoal/70 font-medium mt-0.5">
+                  Cloud & M365 Ecosystem
+                </p>
               </div>
 
               <div>
-                <div className="flex items-center gap-1.5 text-brand-dark font-bold text-lg sm:text-xl">
-                  <span>Azure Cloud</span>
+                <div className="text-xl sm:text-2xl font-extrabold text-brand-teal tracking-tight">
+                  Global
                 </div>
-                <p className="text-xs text-gray-500 font-medium">Certified Practices</p>
+                <p className="text-xs text-brand-charcoal/70 font-medium mt-0.5">
+                  Enterprise Client Delivery
+                </p>
               </div>
             </div>
           </div>
 
-          {/* Right Visual Column – Enterprise Tech & Architecture */}
+          {/* Right Visual Column: Kyndryl-Inspired Enterprise Technology Architecture Visualization */}
           <div className="lg:col-span-5 relative">
-            <div className="relative mx-auto max-w-md lg:max-w-none">
-              {/* Main Enterprise Technology Canvas */}
-              <div className="bg-white rounded-2xl border border-gray-200/80 shadow-card p-6 relative overflow-hidden">
-                {/* Window header */}
+            <div className="relative mx-auto max-w-lg lg:max-w-none">
+              {/* Outer Decorative Glow */}
+              <div className="absolute -inset-1.5 bg-gradient-to-r from-brand-green/20 via-brand-teal/20 to-brand-green/20 rounded-3xl blur-xl opacity-75" />
+
+              {/* Main Enterprise Canvas Console */}
+              <div className="relative bg-white rounded-2xl border border-gray-200/90 shadow-2xl p-6 overflow-hidden">
+                {/* Console Header Bar */}
                 <div className="flex items-center justify-between pb-4 border-b border-gray-100">
-                  <div className="flex items-center space-x-1.5">
-                    <div className="w-3 h-3 rounded-full bg-red-400" />
-                    <div className="w-3 h-3 rounded-full bg-yellow-400" />
-                    <div className="w-3 h-3 rounded-full bg-brand-green" />
+                  <div className="flex items-center space-x-2">
+                    <span className="w-3 h-3 rounded-full bg-red-400 inline-block" />
+                    <span className="w-3 h-3 rounded-full bg-yellow-400 inline-block" />
+                    <span className="w-3 h-3 rounded-full bg-brand-green inline-block" />
                   </div>
-                  <div className="text-xs font-mono text-gray-400 flex items-center gap-1.5">
-                    <Server className="w-3.5 h-3.5 text-brand-teal" />
-                    <span>tenant-sec-engine.prod</span>
+                  <div className="flex items-center gap-1.5 text-xs font-mono text-gray-500">
+                    <Activity className="w-3.5 h-3.5 text-brand-teal animate-pulse" />
+                    <span>cloud-mesh.vp-infra.net</span>
+                  </div>
+                  <span className="px-2 py-0.5 text-[10px] font-bold text-brand-green bg-brand-light rounded border border-brand-green/30">
+                    ACTIVE
+                  </span>
+                </div>
+
+                {/* Cloud & Architecture Topology Visual */}
+                <div className="py-5 space-y-4">
+                  {/* Top Architecture Layer: Modern Cloud & Identity */}
+                  <div className="bg-brand-light/60 rounded-xl p-4 border border-brand-green/20">
+                    <div className="flex items-center justify-between mb-2">
+                      <div className="flex items-center gap-2">
+                        <Cloud className="w-4 h-4 text-brand-green" />
+                        <span className="text-xs font-bold text-brand-dark uppercase tracking-wider">
+                          Microsoft Cloud Core
+                        </span>
+                      </div>
+                      <span className="text-[11px] text-brand-green font-semibold">Healthy</span>
+                    </div>
+                    <div className="grid grid-cols-3 gap-2 text-center">
+                      <div className="bg-white rounded-lg p-2 border border-gray-100 shadow-2xs">
+                        <span className="block text-[11px] font-bold text-brand-dark">M365 & Entra</span>
+                        <span className="block text-[10px] text-gray-500">Zero Trust IAM</span>
+                      </div>
+                      <div className="bg-white rounded-lg p-2 border border-gray-100 shadow-2xs">
+                        <span className="block text-[11px] font-bold text-brand-dark">Azure Cloud</span>
+                        <span className="block text-[10px] text-gray-500">High Availability</span>
+                      </div>
+                      <div className="bg-white rounded-lg p-2 border border-gray-100 shadow-2xs">
+                        <span className="block text-[11px] font-bold text-brand-dark">Intune UEM</span>
+                        <span className="block text-[10px] text-gray-500">Compliance</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Middle Architecture Layer: Cybersecurity & Telemetry */}
+                  <div className="bg-white rounded-xl p-4 border border-gray-200/90 shadow-sm space-y-3">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <Lock className="w-4 h-4 text-brand-teal" />
+                        <span className="text-xs font-bold text-brand-dark uppercase tracking-wider">
+                          Cybersecurity & Compliance Posture
+                        </span>
+                      </div>
+                      <span className="text-[11px] text-brand-teal font-semibold">100% Protected</span>
+                    </div>
+
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-between text-xs text-brand-charcoal">
+                        <span className="flex items-center gap-1.5">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-brand-green" />
+                          Conditional Access & MFA
+                        </span>
+                        <span className="font-mono text-[11px] text-brand-dark font-semibold">Enforced</span>
+                      </div>
+                      <div className="flex items-center justify-between text-xs text-brand-charcoal">
+                        <span className="flex items-center gap-1.5">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-brand-green" />
+                          Defender Threat Protection
+                        </span>
+                        <span className="font-mono text-[11px] text-brand-dark font-semibold">Active</span>
+                      </div>
+                      <div className="flex items-center justify-between text-xs text-brand-charcoal">
+                        <span className="flex items-center gap-1.5">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-brand-teal" />
+                          Mito Automated Security Check
+                        </span>
+                        <span className="font-mono text-[11px] text-brand-teal font-semibold">Passed</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Bottom Architecture Layer: DevOps CI/CD Pipelines */}
+                  <div className="bg-gray-50 rounded-xl p-3.5 border border-gray-200/80 flex items-center justify-between">
+                    <div className="flex items-center gap-2.5">
+                      <div className="w-8 h-8 rounded-lg bg-white border border-gray-200 flex items-center justify-center text-brand-dark shadow-2xs">
+                        <Terminal className="w-4 h-4 text-brand-green" />
+                      </div>
+                      <div>
+                        <div className="text-xs font-bold text-brand-dark">DevOps Infrastructure Pipeline</div>
+                        <div className="text-[10px] text-gray-500">Automated Terraform & GitHub Actions</div>
+                      </div>
+                    </div>
+                    <span className="text-xs font-mono text-brand-green font-semibold">Synced</span>
                   </div>
                 </div>
 
-                {/* Cloud Infrastructure Topology visual */}
-                <div className="mt-4 space-y-3.5">
-                  {/* Item 1: Cloud & M365 */}
-                  <div className="p-3.5 rounded-xl bg-brand-light/70 border border-brand-green/20 flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-lg bg-brand-green/10 flex items-center justify-center text-brand-green">
-                        <Cloud className="w-5 h-5" />
-                      </div>
-                      <div>
-                        <p className="text-xs font-semibold text-brand-dark">Microsoft 365 & Azure Estate</p>
-                        <p className="text-[11px] text-gray-500">Intune · Entra ID · Exchange Online</p>
-                      </div>
-                    </div>
-                    <span className="text-[11px] font-semibold text-brand-green bg-white px-2 py-0.5 rounded-md border border-brand-green/20">
-                      Healthy
-                    </span>
-                  </div>
-
-                  {/* Item 2: Cybersecurity & Zero Trust */}
-                  <div className="p-3.5 rounded-xl bg-teal-50/60 border border-brand-teal/25 flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-lg bg-brand-teal/10 flex items-center justify-center text-brand-teal">
-                        <Lock className="w-5 h-5" />
-                      </div>
-                      <div>
-                        <p className="text-xs font-semibold text-brand-dark">Cybersecurity & Zero Trust</p>
-                        <p className="text-[11px] text-gray-500">MFA · Conditional Access · Defender</p>
-                      </div>
-                    </div>
-                    <span className="text-[11px] font-semibold text-brand-teal bg-white px-2 py-0.5 rounded-md border border-brand-teal/20">
-                      Enforced
-                    </span>
-                  </div>
-
-                  {/* Item 3: DevOps & IaC */}
-                  <div className="p-3.5 rounded-xl bg-gray-50 border border-gray-200/70 flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-lg bg-gray-200/60 flex items-center justify-center text-brand-charcoal">
-                        <Cpu className="w-5 h-5" />
-                      </div>
-                      <div>
-                        <p className="text-xs font-semibold text-brand-dark">DevOps & Automated Pipelines</p>
-                        <p className="text-[11px] text-gray-500">Terraform · CI/CD · Kubernetes</p>
-                      </div>
-                    </div>
-                    <span className="text-[11px] font-semibold text-gray-700 bg-white px-2 py-0.5 rounded-md border border-gray-200">
-                      Automated
-                    </span>
-                  </div>
-
-                  {/* Item 4: Mito Assessment Preview Badge */}
-                  <div className="p-3.5 rounded-xl bg-gradient-to-r from-brand-light to-teal-50/50 border border-brand-green/30">
-                    <div className="flex items-center justify-between text-xs mb-1.5">
-                      <span className="font-semibold text-brand-dark flex items-center gap-1.5">
-                        <ShieldCheck className="w-4 h-4 text-brand-green" />
-                        Mito Security Assessment
-                      </span>
-                      <span className="font-bold text-brand-green">400+ Checks</span>
-                    </div>
-                    <div className="w-full bg-gray-200 rounded-full h-1.5 overflow-hidden">
-                      <div className="bg-gradient-to-r from-brand-green to-brand-teal h-1.5 rounded-full w-[94%]" />
-                    </div>
-                    <div className="flex justify-between items-center text-[10px] text-gray-500 mt-1">
-                      <span>Baseline: CIS / CISA standards</span>
-                      <span className="text-brand-green font-medium">94% Compliant</span>
-                    </div>
-                  </div>
+                {/* Micro Footer Bar with Global Connectivity */}
+                <div className="pt-3.5 border-t border-gray-100 flex items-center justify-between text-[11px] text-gray-500">
+                  <span className="flex items-center gap-1.5">
+                    <Globe className="w-3.5 h-3.5 text-brand-teal" />
+                    <span>UAE & Global Operations</span>
+                  </span>
+                  <span className="font-semibold text-brand-dark">Virtual Petals Enterprise Mesh</span>
                 </div>
               </div>
 
-              {/* Floating Badge 1 */}
-              <div className="hidden sm:flex absolute -bottom-5 -left-5 bg-white rounded-xl p-3 shadow-card border border-gray-100 items-center gap-3 animate-bounce [animation-duration:5s]">
-                <div className="w-8 h-8 rounded-lg bg-brand-green/10 flex items-center justify-center text-brand-green">
-                  <CheckCircle2 className="w-5 h-5" />
+              {/* Floating Floating Pill: Proprietary Tech Badge */}
+              <div className="absolute -bottom-4 -left-4 sm:-bottom-5 sm:-left-5 bg-brand-dark text-white p-3.5 rounded-2xl shadow-xl border border-white/10 flex items-center gap-3">
+                <div className="w-9 h-9 rounded-xl bg-brand-green/20 border border-brand-green/30 flex items-center justify-center text-brand-green">
+                  <ShieldCheck className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-xs font-bold text-brand-dark">99.9% Uptime</p>
-                  <p className="text-[10px] text-gray-500">SLA-Backed Cloud Delivery</p>
+                  <div className="text-xs font-bold">Proprietary Innovation</div>
+                  <div className="text-[10px] text-gray-300">Mito M365 Security Platform</div>
                 </div>
-              </div>
-
-              {/* Floating Badge 2 */}
-              <div className="hidden sm:flex absolute -top-5 -right-3 bg-white rounded-xl p-3 shadow-card border border-gray-100 items-center gap-2.5">
-                <Terminal className="w-4 h-4 text-brand-teal" />
-                <span className="text-xs font-bold text-brand-dark">Automated IaC & Governance</span>
               </div>
             </div>
           </div>

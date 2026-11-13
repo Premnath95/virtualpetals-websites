@@ -5,7 +5,7 @@ import MitoDemoBooking from "@/components/MitoDemoBooking";
 export const metadata: Metadata = {
   title: "Contact Us | Connect with Virtual Petals",
   description:
-    "Get in touch with Virtual Petals. Reach our UAE office at Etihad Towers Abu Dhabi or our India delivery center in Chennai for Microsoft cloud, security and IT consulting.",
+    "Get in touch with Virtual Petals. Reach our UAE office at Etihad Towers Abu Dhabi or our India registered entity NetFuxion Pro in Coimbatore for Microsoft cloud, security and IT consulting.",
 };
 
 export default function ContactPage() {
