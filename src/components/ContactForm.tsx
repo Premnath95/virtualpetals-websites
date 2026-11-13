@@ -1,21 +1,20 @@
 "use client";
 
 import React, { useState } from "react";
-import { Mail, Phone, MapPin, Send, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
+import Image from "next/image";
+import { Mail, Phone, MapPin, Send, CheckCircle2, AlertCircle, Loader2, Sparkles, Calendar, Clock } from "lucide-react";
 import { COMPANY_INFO } from "@/data/companyData";
 
 const SERVICE_OPTIONS = [
-  "Microsoft 365 Solutions",
-  "Azure Cloud Solutions",
-  "Microsoft Intune & Endpoint Management",
-  "Cybersecurity & Compliance",
-  "DevOps & Automation",
-  "Cloud Migration",
-  "Managed IT Services",
-  "IT Consulting",
-  "Mito Product Demo / Trial",
-  "Partnership with NetFuxion Pro",
-  "Other Technology Requirements",
+  "Microsoft 365 Architecture & Governance",
+  "Azure Cloud Infrastructure & Migration",
+  "Cybersecurity, Defender & Zero Trust",
+  "DevOps, Kubernetes & CI/CD Automation",
+  "Endpoint Management & Windows Autopilot",
+  "Managed IT Services & 24/7 Monitoring",
+  "Mito Product Demo / Baseline Assessment",
+  "NetFuxion Pro Business Collaboration",
+  "Other Enterprise IT Consultation",
 ];
 
 export default function ContactForm() {
@@ -89,147 +88,155 @@ export default function ContactForm() {
   };
 
   return (
-    <section id="contact" className="py-20 md:py-28 bg-brand-light/30 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          {/* Left Column: Contact details & official presence */}
-          <div className="lg:col-span-5 space-y-8">
-            <div className="space-y-3">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-light text-brand-dark text-xs font-semibold tracking-wide uppercase">
-                Direct Consultation
+    <section id="contact" className="py-24 md:py-36 bg-white relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Editorial Section Header */}
+        <div className="max-w-3xl space-y-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-light border border-brand-teal/20 text-brand-dark text-xs font-bold tracking-wider uppercase">
+            <Sparkles className="w-3.5 h-3.5 text-brand-green" />
+            <span>Consultation & Advisory</span>
+          </div>
+
+          <h2 className="text-3xl sm:text-5xl lg:text-[50px] font-extrabold text-brand-dark tracking-tight leading-[1.12]">
+            Let's Solve Your Next Technology Challenge.
+          </h2>
+
+          <p className="text-base sm:text-xl text-brand-charcoal/85 leading-relaxed font-normal">
+            Whether modernising your Microsoft cloud, strengthening cybersecurity, automating deployments or optimising IT infrastructure, Virtual Petals brings enterprise expertise to your initiatives.
+          </p>
+        </div>
+
+        {/* Section G: Kyndryl-Style Layout with Professional Human Photography & Dual Consultation Paths */}
+        <div className="mt-16 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          {/* Left Column: Human Photography + Office Contacts + Direct Calendly CTA */}
+          <div className="lg:col-span-5 space-y-6">
+            {/* Professional Human Photograph: Technology Consultant in Executive Discussion */}
+            <div className="relative rounded-3xl overflow-hidden shadow-xl aspect-[16/10] border border-gray-100 group">
+              <Image
+                src="/images/contact-consulting.jpg"
+                alt="Senior technology consultant consulting with business client"
+                fill
+                className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/75 via-transparent to-transparent" />
+              <div className="absolute bottom-4 left-4 right-4 text-white">
+                <span className="text-xs font-bold uppercase tracking-wider text-emerald-300 block">
+                  Direct Architecture Advisory
+                </span>
+                <span className="text-sm font-semibold">
+                  Engage directly with practicing cloud & security engineers
+                </span>
               </div>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-brand-dark tracking-tight">
-                Let's Solve Your Next Technology Challenge.
-              </h2>
-              <p className="text-brand-charcoal/80 text-base leading-relaxed">
-                Whether modernising your Microsoft cloud, strengthening cybersecurity, automating deployments or optimising IT infrastructure, Virtual Petals brings enterprise expertise to your initiatives.
-              </p>
             </div>
 
-            {/* Official offices */}
-            <div className="space-y-6 pt-2">
-              <div className="bg-white rounded-2xl p-6 border border-gray-200/80 shadow-subtle flex items-start gap-4">
-                <div className="w-10 h-10 rounded-xl bg-brand-light flex items-center justify-center text-brand-green shrink-0">
+            {/* Direct Calendly Instant Booking Banner */}
+            <div className="p-6 rounded-3xl bg-brand-dark text-white space-y-3 shadow-lg">
+              <div className="flex items-center gap-2 text-brand-green text-xs font-bold uppercase tracking-wider">
+                <Calendar className="w-4 h-4" />
+                <span>Prefer an Immediate Discussion?</span>
+              </div>
+              <h3 className="text-xl font-bold leading-snug">
+                Schedule a 30-Minute Architecture Session
+              </h3>
+              <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">
+                Connect directly with our senior cloud consulting team via video call to discuss your requirements.
+              </p>
+              <div className="pt-2">
+                <a
+                  href="https://calendly.com/virtualpetals/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="gradient-button text-white text-sm font-semibold px-6 py-3 rounded-xl shadow-xs inline-flex items-center gap-2"
+                >
+                  <span>Book Consultation via Calendly</span>
+                  <Send className="w-3.5 h-3.5" />
+                </a>
+              </div>
+            </div>
+
+            {/* Official Office Details */}
+            <div className="space-y-4">
+              <div className="bg-gray-50 rounded-2xl p-5 border border-gray-200/80 flex items-start gap-4">
+                <div className="w-10 h-10 rounded-xl bg-white border border-gray-200 flex items-center justify-center text-brand-green shrink-0 shadow-2xs">
                   <MapPin className="w-5 h-5" />
                 </div>
-                <div className="space-y-1">
-                  <h3 className="font-bold text-brand-dark text-base">United Arab Emirates</h3>
-                  <p className="text-xs text-brand-charcoal/85 leading-relaxed">
-                    Level 36, Etihad Towers 3, Abu Dhabi, United Arab Emirates
+                <div className="space-y-0.5 text-xs">
+                  <strong className="text-sm font-bold text-brand-dark block">United Arab Emirates</strong>
+                  <p className="text-brand-charcoal/85">
+                    Level 36, Etihad Towers 3, Abu Dhabi, United Arab Emirates (P.O. Box: 28686)
                   </p>
-                  <p className="text-xs text-gray-400">P.O. Box: 28686</p>
                 </div>
               </div>
 
-              <div className="bg-white rounded-2xl p-6 border border-gray-200/80 shadow-subtle flex items-start gap-4">
-                <div className="w-10 h-10 rounded-xl bg-teal-50 flex items-center justify-center text-brand-teal shrink-0">
+              <div className="bg-gray-50 rounded-2xl p-5 border border-gray-200/80 flex items-start gap-4">
+                <div className="w-10 h-10 rounded-xl bg-white border border-gray-200 flex items-center justify-center text-brand-teal shrink-0 shadow-2xs">
                   <MapPin className="w-5 h-5" />
                 </div>
-                <div className="space-y-1">
-                  <h3 className="font-bold text-brand-dark text-base">NetFuxion Pro Office</h3>
-                  <p className="text-xs text-brand-charcoal/85 leading-relaxed">
+                <div className="space-y-0.5 text-xs">
+                  <strong className="text-sm font-bold text-brand-dark block">NetFuxion Pro Office (India)</strong>
+                  <p className="text-brand-charcoal/85">
                     Plot No. 12 4th South Cross St, Kovai Thirunagar 4th St, Indira Nagar, Civil Aerodrome Post, Nehru Nagar West, Coimbatore, Tamil Nadu 641014
                   </p>
                 </div>
               </div>
 
-              <div className="bg-white rounded-2xl p-6 border border-gray-200/80 shadow-subtle flex items-start gap-4">
-                <div className="w-10 h-10 rounded-xl bg-brand-light flex items-center justify-center text-brand-green shrink-0">
-                  <Phone className="w-5 h-5" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                <div className="bg-gray-50 rounded-2xl p-4 border border-gray-200/80 flex items-center gap-3">
+                  <Phone className="w-4 h-4 text-brand-green shrink-0" />
+                  <a href={`tel:${COMPANY_INFO.contacts.phone}`} className="font-semibold text-brand-dark hover:text-brand-green">
+                    {COMPANY_INFO.contacts.phone}
+                  </a>
                 </div>
-                <div className="space-y-1">
-                  <h3 className="font-bold text-brand-dark text-base">Phone & Voice</h3>
-                  <p className="text-xs text-brand-charcoal/85">
-                    <a href={`tel:${COMPANY_INFO.contacts.phone}`} className="hover:text-brand-green transition-colors">
-                      {COMPANY_INFO.contacts.phone}
-                    </a>
-                  </p>
-                  <p className="text-[11px] text-gray-400">Sunday - Thursday, 9:00 AM - 6:00 PM GST</p>
-                </div>
-              </div>
-
-              <div className="bg-white rounded-2xl p-6 border border-gray-200/80 shadow-subtle flex items-start gap-4">
-                <div className="w-10 h-10 rounded-xl bg-teal-50 flex items-center justify-center text-brand-teal shrink-0">
-                  <Mail className="w-5 h-5" />
-                </div>
-                <div className="space-y-1">
-                  <h3 className="font-bold text-brand-dark text-base">Electronic Mail</h3>
-                  <p className="text-xs text-brand-charcoal/85">
-                    <a href={`mailto:${COMPANY_INFO.contacts.emails.general}`} className="hover:text-brand-green transition-colors">
-                      {COMPANY_INFO.contacts.emails.general}
-                    </a>
-                  </p>
-                  <p className="text-xs text-brand-charcoal/85">
-                    <a href={`mailto:${COMPANY_INFO.contacts.emails.contact}`} className="hover:text-brand-green transition-colors">
-                      {COMPANY_INFO.contacts.emails.contact}
-                    </a>
-                  </p>
-                </div>
-              </div>
-
-              {/* Direct Calendly Booking */}
-              <div className="p-5 rounded-2xl bg-brand-light/70 border border-brand-green/20 space-y-2.5">
-                <span className="text-xs font-bold uppercase tracking-wider text-brand-dark block">
-                  Prefer an Immediate Discussion?
-                </span>
-                <p className="text-xs text-brand-charcoal/80 leading-relaxed">
-                  Schedule a 30-minute introductory architecture session directly with our senior cloud consulting team.
-                </p>
-                <div className="pt-1">
-                  <a
-                    href="https://calendly.com/virtualpetals/30min"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="gradient-button text-white text-xs sm:text-sm font-semibold px-4 py-2.5 rounded-xl shadow-xs inline-flex items-center gap-2"
-                  >
-                    <span>Schedule via Calendly</span>
-                    <Send className="w-3.5 h-3.5" />
+                <div className="bg-gray-50 rounded-2xl p-4 border border-gray-200/80 flex items-center gap-3">
+                  <Mail className="w-4 h-4 text-brand-teal shrink-0" />
+                  <a href={`mailto:${COMPANY_INFO.contacts.emails.general}`} className="font-semibold text-brand-dark hover:text-brand-teal truncate">
+                    {COMPANY_INFO.contacts.emails.general}
                   </a>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Right Column: Interactive Contact Form */}
-          <div className="lg:col-span-7 bg-white rounded-3xl p-8 sm:p-10 border border-gray-200 shadow-card">
-            <h3 className="text-2xl font-bold text-brand-dark mb-2">Send an Enquiry</h3>
-            <p className="text-xs sm:text-sm text-gray-500 mb-8">
-              Fill out the details below and a senior solutions engineer will contact you shortly.
+          {/* Right Column: Working Interactive Form */}
+          <div className="lg:col-span-7 bg-white rounded-3xl p-8 sm:p-12 border border-gray-200/90 shadow-xl">
+            <h3 className="text-2xl sm:text-3xl font-extrabold text-brand-dark mb-2">
+              Send an Enquiry
+            </h3>
+            <p className="text-sm text-brand-charcoal/70 mb-8 font-normal">
+              Fill out your details below and a senior solutions engineer will contact you within 24 hours.
             </p>
 
             {status.type === "success" && (
-              <div className="mb-6 p-4 rounded-xl bg-green-50 border border-green-200 text-green-800 flex items-start gap-3">
+              <div className="mb-6 p-5 rounded-2xl bg-green-50 border border-green-200 text-green-900 flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-green-600 shrink-0 mt-0.5" />
-                <div className="text-xs sm:text-sm">{status.message}</div>
+                <div className="text-sm font-medium">{status.message}</div>
               </div>
             )}
 
             {status.type === "error" && (
-              <div className="mb-6 p-4 rounded-xl bg-red-50 border border-red-200 text-red-800 flex items-start gap-3">
+              <div className="mb-6 p-5 rounded-2xl bg-red-50 border border-red-200 text-red-900 flex items-start gap-3">
                 <AlertCircle className="w-5 h-5 text-red-600 shrink-0 mt-0.5" />
-                <div className="text-xs sm:text-sm">{status.message}</div>
+                <div className="text-sm font-medium">{status.message}</div>
               </div>
             )}
 
-            <form onSubmit={handleSubmit} className="space-y-5">
-              {/* Anti-spam honeypot (hidden from real users) */}
-              <div className="hidden" aria-hidden="true">
-                <label htmlFor="honeypot">Leave blank</label>
-                <input
-                  type="text"
-                  id="honeypot"
-                  name="honeypot"
-                  value={formData.honeypot}
-                  onChange={handleChange}
-                  tabIndex={-1}
-                  autoComplete="off"
-                />
-              </div>
+            <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Anti-spam honeypot */}
+              <input
+                type="text"
+                name="honeypot"
+                value={formData.honeypot}
+                onChange={handleChange}
+                style={{ display: "none" }}
+                tabIndex={-1}
+                autoComplete="off"
+              />
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="fullName" className="block text-xs font-bold text-brand-dark uppercase tracking-wider mb-1.5">
-                    Full Name <span className="text-red-500">*</span>
+                  <label htmlFor="fullName" className="block text-xs font-bold uppercase tracking-wider text-brand-dark mb-2">
+                    Full Name *
                   </label>
                   <input
                     type="text"
@@ -238,14 +245,14 @@ export default function ContactForm() {
                     required
                     value={formData.fullName}
                     onChange={handleChange}
-                    placeholder="e.g. Sarah Jenkins"
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-green focus:ring-2 focus:ring-brand-green/20 outline-none text-sm transition-all"
+                    placeholder="e.g. David Mitchell"
+                    className="w-full px-4 py-3.5 rounded-xl border border-gray-300 focus:border-brand-green focus:ring-2 focus:ring-brand-green/20 outline-none text-sm text-brand-charcoal transition-all"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-xs font-bold text-brand-dark uppercase tracking-wider mb-1.5">
-                    Business Email <span className="text-red-500">*</span>
+                  <label htmlFor="email" className="block text-xs font-bold uppercase tracking-wider text-brand-dark mb-2">
+                    Corporate Email *
                   </label>
                   <input
                     type="email"
@@ -255,30 +262,29 @@ export default function ContactForm() {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="name@company.com"
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-green focus:ring-2 focus:ring-brand-green/20 outline-none text-sm transition-all"
+                    className="w-full px-4 py-3.5 rounded-xl border border-gray-300 focus:border-brand-green focus:ring-2 focus:ring-brand-green/20 outline-none text-sm text-brand-charcoal transition-all"
                   />
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="companyName" className="block text-xs font-bold text-brand-dark uppercase tracking-wider mb-1.5">
-                    Company Name <span className="text-red-500">*</span>
+                  <label htmlFor="companyName" className="block text-xs font-bold uppercase tracking-wider text-brand-dark mb-2">
+                    Company Name
                   </label>
                   <input
                     type="text"
                     id="companyName"
                     name="companyName"
-                    required
                     value={formData.companyName}
                     onChange={handleChange}
-                    placeholder="e.g. Acme Corporation"
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-green focus:ring-2 focus:ring-brand-green/20 outline-none text-sm transition-all"
+                    placeholder="e.g. Acme Enterprises"
+                    className="w-full px-4 py-3.5 rounded-xl border border-gray-300 focus:border-brand-green focus:ring-2 focus:ring-brand-green/20 outline-none text-sm text-brand-charcoal transition-all"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="phone" className="block text-xs font-bold text-brand-dark uppercase tracking-wider mb-1.5">
+                  <label htmlFor="phone" className="block text-xs font-bold uppercase tracking-wider text-brand-dark mb-2">
                     Phone Number
                   </label>
                   <input
@@ -287,15 +293,15 @@ export default function ContactForm() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    placeholder="+971 50 000 0000"
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-green focus:ring-2 focus:ring-brand-green/20 outline-none text-sm transition-all"
+                    placeholder="+971 50 123 4567"
+                    className="w-full px-4 py-3.5 rounded-xl border border-gray-300 focus:border-brand-green focus:ring-2 focus:ring-brand-green/20 outline-none text-sm text-brand-charcoal transition-all"
                   />
                 </div>
               </div>
 
               <div>
-                <label htmlFor="service" className="block text-xs font-bold text-brand-dark uppercase tracking-wider mb-1.5">
-                  Service Interested In <span className="text-red-500">*</span>
+                <label htmlFor="service" className="block text-xs font-bold uppercase tracking-wider text-brand-dark mb-2">
+                  Area of Interest *
                 </label>
                 <select
                   id="service"
@@ -303,9 +309,9 @@ export default function ContactForm() {
                   required
                   value={formData.service}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-green focus:ring-2 focus:ring-brand-green/20 outline-none text-sm transition-all bg-white"
+                  className="w-full px-4 py-3.5 rounded-xl border border-gray-300 focus:border-brand-green focus:ring-2 focus:ring-brand-green/20 outline-none text-sm text-brand-charcoal bg-white transition-all"
                 >
-                  <option value="">Select a service...</option>
+                  <option value="">Select a technology solution...</option>
                   {SERVICE_OPTIONS.map((opt) => (
                     <option key={opt} value={opt}>
                       {opt}
@@ -315,42 +321,40 @@ export default function ContactForm() {
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-xs font-bold text-brand-dark uppercase tracking-wider mb-1.5">
-                  Message <span className="text-red-500">*</span>
+                <label htmlFor="message" className="block text-xs font-bold uppercase tracking-wider text-brand-dark mb-2">
+                  Project Details / Technology Requirements *
                 </label>
                 <textarea
                   id="message"
                   name="message"
-                  rows={4}
                   required
+                  rows={4}
                   value={formData.message}
                   onChange={handleChange}
-                  placeholder="Tell us about your organization's goals, current IT environment, or specific project requirements..."
-                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-green focus:ring-2 focus:ring-brand-green/20 outline-none text-sm transition-all resize-y"
+                  placeholder="Tell us about your current IT infrastructure, objectives, or timeline..."
+                  className="w-full px-4 py-3.5 rounded-xl border border-gray-300 focus:border-brand-green focus:ring-2 focus:ring-brand-green/20 outline-none text-sm text-brand-charcoal transition-all"
                 />
               </div>
 
-              <button
-                type="submit"
-                disabled={loading}
-                className="w-full gradient-button text-white font-semibold py-4 px-6 rounded-xl shadow-md hover:shadow-lg flex items-center justify-center gap-2 transition-all disabled:opacity-60 cursor-pointer text-base"
-              >
-                {loading ? (
-                  <>
-                    <Loader2 className="w-5 h-5 animate-spin" />
-                    <span>Transmitting Enquiry...</span>
-                  </>
-                ) : (
-                  <>
-                    <Send className="w-4 h-4" />
-                    <span>Send Enquiry</span>
-                  </>
-                )}
-              </button>
-
-              <p className="text-[11px] text-gray-400 text-center">
-                We respect your privacy. Your information is held securely and never shared with unauthorized parties.
-              </p>
+              <div className="pt-2">
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="w-full sm:w-auto gradient-button text-white font-semibold px-9 py-4 rounded-xl shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2.5 text-base disabled:opacity-60 cursor-pointer"
+                >
+                  {loading ? (
+                    <>
+                      <Loader2 className="w-5 h-5 animate-spin" />
+                      <span>Submitting Enquiry...</span>
+                    </>
+                  ) : (
+                    <>
+                      <span>Submit Technology Enquiry</span>
+                      <Send className="w-4 h-4" />
+                    </>
+                  )}
+                </button>
+              </div>
             </form>
           </div>
         </div>

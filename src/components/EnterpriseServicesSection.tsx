@@ -1,22 +1,17 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import {
   Cloud,
-  Layers,
+  Server,
   ShieldCheck,
   Terminal,
   Smartphone,
   Headphones,
   ArrowRight,
   CheckCircle2,
-  Cpu,
-  Server,
-  Lock,
-  GitBranch,
-  Shield,
-  Workflow,
   Sparkles,
 } from "lucide-react";
 
@@ -26,14 +21,15 @@ interface ServiceCategory {
   title: string;
   shortDesc: string;
   longDesc: string;
+  image: string;
+  imageAlt: string;
   icon: React.ComponentType<{ className?: string }>;
-  accentColor: "green" | "teal";
   capabilities: string[];
   technologies: string[];
   link: string;
 }
 
-const ENTERPRISE_CATEGORIES: ServiceCategory[] = [
+const ENTERPRISE_SERVICES: ServiceCategory[] = [
   {
     id: "m365",
     category: "Microsoft Cloud & Modern Workplace",
@@ -42,8 +38,9 @@ const ENTERPRISE_CATEGORIES: ServiceCategory[] = [
       "Modernise communications, document workflows, and enterprise identity with Microsoft 365, Teams, and Entra ID.",
     longDesc:
       "We architect, migrate, and govern Microsoft 365 environments tailored to enterprise productivity and strict compliance standards. From multi-geo tenant setups to automated collaboration governance, we ensure seamless day-to-day operations.",
+    image: "/images/services/m365-workplace.jpg",
+    imageAlt: "Enterprise team collaborating in modern office with Microsoft 365 productivity tools",
     icon: Cloud,
-    accentColor: "green",
     capabilities: [
       "Microsoft 365 Architecture & Governance",
       "Exchange Online Migration & Archiving",
@@ -63,8 +60,9 @@ const ENTERPRISE_CATEGORIES: ServiceCategory[] = [
       "Enterprise Azure compute, networking, hybrid integration, and infrastructure cost optimisation.",
     longDesc:
       "We build robust cloud foundations on Microsoft Azure designed for high availability, disaster recovery, and operational efficiency. Whether executing complex migrations or modernising existing infrastructure, we deliver resilient cloud topology.",
+    image: "/images/services/azure-cloud-datacenter.jpg",
+    imageAlt: "Cloud engineer managing enterprise infrastructure and datacenter servers",
     icon: Server,
-    accentColor: "teal",
     capabilities: [
       "Microsoft Azure Architecture & Design",
       "Azure Virtual Machines & Compute Scaling",
@@ -84,8 +82,9 @@ const ENTERPRISE_CATEGORIES: ServiceCategory[] = [
       "Comprehensive Microsoft Defender, Conditional Access, MFA, and automated compliance assessments.",
     longDesc:
       "Security is engineered into every component of your IT environment. We implement multi-layered Zero Trust architectures, enforce strict Conditional Access policies, conduct in-depth vulnerability assessments, and deploy automated continuous monitoring.",
+    image: "/images/services/cybersecurity-soc.jpg",
+    imageAlt: "Cybersecurity analyst in a modern security operations centre monitoring threat telemetry",
     icon: ShieldCheck,
-    accentColor: "green",
     capabilities: [
       "Microsoft Defender for Endpoint, Office & Cloud",
       "Conditional Access Policy Architecture",
@@ -105,8 +104,9 @@ const ENTERPRISE_CATEGORIES: ServiceCategory[] = [
       "CI/CD pipelines, container orchestration, and Infrastructure as Code using Terraform and GitHub Actions.",
     longDesc:
       "Modernise your development and deployment workflows. We implement automated CI/CD pipelines, containerize enterprise workloads with Docker and Kubernetes (AKS), and codify environments with Terraform for repeatable, error-free releases.",
+    image: "/images/services/devops-engineering.jpg",
+    imageAlt: "Software engineers and DevOps specialists collaborating in a development environment",
     icon: Terminal,
-    accentColor: "teal",
     capabilities: [
       "Azure DevOps Pipelines & Boards",
       "GitHub Actions Automated Workflows",
@@ -126,8 +126,9 @@ const ENTERPRISE_CATEGORIES: ServiceCategory[] = [
       "Zero-touch deployment with Windows Autopilot, Intune compliance, and remote device security.",
     longDesc:
       "Manage and protect corporate and BYOD endpoints with Microsoft Intune. We enable zero-touch out-of-the-box hardware deployment via Windows Autopilot, enforce compliance policies, and ensure sensitive business data remains protected anywhere.",
+    image: "/images/services/endpoint-management.jpg",
+    imageAlt: "IT professional deploying and managing enterprise corporate laptop fleet with Intune",
     icon: Smartphone,
-    accentColor: "green",
     capabilities: [
       "Microsoft Intune MDM & MAM Configuration",
       "Windows Autopilot Zero-Touch Provisioning",
@@ -147,8 +148,9 @@ const ENTERPRISE_CATEGORIES: ServiceCategory[] = [
       "Reliable 24/7 technical operations, continuous monitoring, and executive IT strategy.",
     longDesc:
       "Ensure uninterrupted business operations with our managed IT services. We handle daily administration, proactive telemetry monitoring, routine patching, and strategic IT roadmapping so your internal teams can focus on strategic initiatives.",
+    image: "/images/services/managed-it-consulting.jpg",
+    imageAlt: "Senior IT consultant meeting with business executives in executive boardroom",
     icon: Headphones,
-    accentColor: "teal",
     capabilities: [
       "Enterprise IT Administration & Operations",
       "24/7 Cloud Telemetry & System Monitoring",
@@ -163,23 +165,23 @@ const ENTERPRISE_CATEGORIES: ServiceCategory[] = [
 ];
 
 export default function EnterpriseServicesSection() {
-  const [selectedCategory, setSelectedCategory] = useState<string>(ENTERPRISE_CATEGORIES[0].id);
+  const [selectedCategory, setSelectedCategory] = useState<string>(ENTERPRISE_SERVICES[0].id);
 
   const active =
-    ENTERPRISE_CATEGORIES.find((cat) => cat.id === selectedCategory) ||
-    ENTERPRISE_CATEGORIES[0];
+    ENTERPRISE_SERVICES.find((cat) => cat.id === selectedCategory) ||
+    ENTERPRISE_SERVICES[0];
 
   return (
-    <section id="services" className="py-24 md:py-32 bg-gray-50/70 relative overflow-hidden">
+    <section id="services" className="py-24 md:py-36 bg-gray-50/70 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Editorial Section Header */}
         <div className="max-w-3xl space-y-4">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-brand-teal/20 text-brand-dark text-xs font-bold tracking-wider uppercase shadow-2xs">
             <Sparkles className="w-3.5 h-3.5 text-brand-teal" />
-            <span>Enterprise Services Architecture</span>
+            <span>Enterprise Service Architecture</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-brand-dark tracking-tight leading-[1.15]">
+          <h2 className="text-3xl sm:text-5xl lg:text-[52px] font-extrabold text-brand-dark tracking-tight leading-[1.12]">
             Technology Services That Move Your Business Forward.
           </h2>
 
@@ -188,9 +190,9 @@ export default function EnterpriseServicesSection() {
           </p>
         </div>
 
-        {/* Kyndryl-Style Interactive Enterprise Service Navigation Tabs */}
-        <div className="mt-14 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5">
-          {ENTERPRISE_CATEGORIES.map((cat) => {
+        {/* Kyndryl-Style Interactive Service Category Navigation Tabs */}
+        <div className="mt-14 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+          {ENTERPRISE_SERVICES.map((cat) => {
             const isCurrent = cat.id === active.id;
             const Icon = cat.icon;
             return (
@@ -220,7 +222,7 @@ export default function EnterpriseServicesSection() {
                   />
                 </div>
                 <div>
-                  <span className="block text-xs font-bold leading-tight">
+                  <span className="block text-xs font-bold leading-snug">
                     {cat.category}
                   </span>
                 </div>
@@ -229,65 +231,93 @@ export default function EnterpriseServicesSection() {
           })}
         </div>
 
-        {/* Featured Service Deep-Dive Canvas: Kyndryl-Inspired Editorial Showcase */}
-        <div className="mt-8 bg-white rounded-3xl border border-gray-200/90 shadow-card p-8 sm:p-12 relative overflow-hidden">
-          {/* Subtle Decorative Gradient */}
-          <div className="absolute top-0 right-0 w-80 h-80 bg-gradient-to-bl from-brand-light via-teal-50/30 to-transparent rounded-bl-full pointer-events-none" />
+        {/* Featured Service Showcase: Large Image and Editorial Text Split */}
+        <div className="mt-8 bg-white rounded-3xl border border-gray-200/90 shadow-xl overflow-hidden">
+          <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch">
+            {/* Left Column: Large Photography */}
+            <div className="lg:col-span-6 relative min-h-[380px] sm:min-h-[460px] lg:min-h-[580px] bg-slate-900 group">
+              <Image
+                src={active.image}
+                alt={active.imageAlt}
+                fill
+                className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-brand-dark/20 to-transparent" />
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start relative z-10">
-            {/* Left Content Area: Detailed Scope & Architecture */}
-            <div className="lg:col-span-7 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-brand-light text-brand-dark text-xs font-bold uppercase tracking-wider">
-                <span>{active.category}</span>
-              </div>
-
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-brand-dark leading-snug">
-                {active.title}
-              </h3>
-
-              <p className="text-base sm:text-lg text-brand-charcoal/90 leading-relaxed font-normal">
-                {active.longDesc}
-              </p>
-
-              {/* Verified Capabilities Checklist */}
-              <div className="pt-2">
-                <h4 className="text-xs font-bold text-brand-dark uppercase tracking-wider mb-4">
-                  Core Enterprise Capabilities
-                </h4>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-                  {active.capabilities.map((cap, i) => (
-                    <div key={i} className="flex items-start gap-2.5">
-                      <CheckCircle2 className="w-4 h-4 text-brand-green shrink-0 mt-0.5" />
-                      <span className="text-xs sm:text-sm text-brand-charcoal/90 font-medium leading-tight">
-                        {cap}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Technology Stack Pills */}
-              <div className="pt-4 border-t border-gray-100">
-                <span className="text-[11px] font-bold text-gray-500 uppercase tracking-wider block mb-2.5">
-                  Core Platforms & Standards
-                </span>
-                <div className="flex flex-wrap gap-2">
-                  {active.technologies.map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-3 py-1 rounded-lg bg-gray-100 text-brand-charcoal text-xs font-semibold"
-                    >
-                      {tech}
+              {/* Inset Badge */}
+              <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-white/95 backdrop-blur-md shadow-lg border border-white/30">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-brand-green block">
+                      Enterprise Practice
                     </span>
-                  ))}
+                    <span className="text-sm font-bold text-brand-dark">
+                      {active.category}
+                    </span>
+                  </div>
+                  <span className="text-xs font-mono font-bold text-brand-teal bg-brand-light px-2.5 py-1 rounded">
+                    VERIFIED
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column: Editorial Scope, Capabilities & CTAs */}
+            <div className="lg:col-span-6 p-8 sm:p-12 flex flex-col justify-between space-y-6">
+              <div className="space-y-6">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-brand-light text-brand-dark text-xs font-bold uppercase tracking-wider">
+                  <span>{active.category}</span>
+                </div>
+
+                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-brand-dark leading-snug">
+                  {active.title}
+                </h3>
+
+                <p className="text-base sm:text-lg text-brand-charcoal/90 leading-relaxed font-normal">
+                  {active.longDesc}
+                </p>
+
+                {/* Core Capabilities */}
+                <div className="pt-2">
+                  <h4 className="text-xs font-bold text-brand-dark uppercase tracking-wider mb-4">
+                    Core Capabilities
+                  </h4>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                    {active.capabilities.map((cap, i) => (
+                      <div key={i} className="flex items-start gap-2.5">
+                        <CheckCircle2 className="w-4 h-4 text-brand-green shrink-0 mt-0.5" />
+                        <span className="text-xs sm:text-sm text-brand-charcoal/90 font-medium leading-tight">
+                          {cap}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Technology Pills */}
+                <div className="pt-4 border-t border-gray-100">
+                  <span className="text-[11px] font-bold text-gray-500 uppercase tracking-wider block mb-2.5">
+                    Technology Standards
+                  </span>
+                  <div className="flex flex-wrap gap-2">
+                    {active.technologies.map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-3 py-1 rounded-lg bg-gray-100 text-brand-charcoal text-xs font-semibold"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
 
-              {/* CTA Link */}
-              <div className="pt-4 flex items-center gap-4">
+              {/* CTAs */}
+              <div className="pt-4 flex flex-wrap items-center gap-4 border-t border-gray-100">
                 <Link
                   href={active.link}
-                  className="gradient-button text-white text-sm font-semibold px-6 py-3 rounded-xl shadow-xs flex items-center gap-2 group transition-all"
+                  className="gradient-button text-white text-sm font-semibold px-6 py-3.5 rounded-xl shadow-xs flex items-center gap-2 group transition-all"
                 >
                   <span>Explore {active.category}</span>
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -301,99 +331,57 @@ export default function EnterpriseServicesSection() {
                 </Link>
               </div>
             </div>
-
-            {/* Right Visual Card: Architecture Highlights & Metrics */}
-            <div className="lg:col-span-5 bg-brand-light/50 rounded-2xl p-6 sm:p-8 border border-brand-green/20 space-y-6">
-              <div className="flex items-center justify-between pb-4 border-b border-brand-green/20">
-                <div className="flex items-center gap-2.5">
-                  <div className="w-10 h-10 rounded-xl bg-white border border-brand-green/20 flex items-center justify-center text-brand-green shadow-2xs">
-                    {React.createElement(active.icon, { className: "w-5 h-5" })}
-                  </div>
-                  <div>
-                    <span className="block text-xs font-bold text-brand-dark uppercase tracking-wider">
-                      Service Architecture
-                    </span>
-                    <span className="block text-[11px] text-gray-500">
-                      Standardized Delivery Model
-                    </span>
-                  </div>
-                </div>
-                <span className="text-xs font-mono font-bold text-brand-green bg-white px-2.5 py-1 rounded border border-brand-green/20">
-                  ENTERPRISE
-                </span>
-              </div>
-
-              {/* Three Value Pillars */}
-              <div className="space-y-4">
-                <div className="bg-white rounded-xl p-4 border border-gray-100 shadow-2xs">
-                  <span className="text-xs font-bold text-brand-dark block mb-1">
-                    01. Architectural Assessment
-                  </span>
-                  <p className="text-xs text-brand-charcoal/80 leading-relaxed">
-                    Comprehensive audit of existing configurations, licenses, security postures, and scalability constraints.
-                  </p>
-                </div>
-
-                <div className="bg-white rounded-xl p-4 border border-gray-100 shadow-2xs">
-                  <span className="text-xs font-bold text-brand-dark block mb-1">
-                    02. Zero-Disruption Execution
-                  </span>
-                  <p className="text-xs text-brand-charcoal/80 leading-relaxed">
-                    Phased rollout with automated verification, fallback strategies, and transparent stakeholder communication.
-                  </p>
-                </div>
-
-                <div className="bg-white rounded-xl p-4 border border-gray-100 shadow-2xs">
-                  <span className="text-xs font-bold text-brand-dark block mb-1">
-                    03. Ongoing Governance & Support
-                  </span>
-                  <p className="text-xs text-brand-charcoal/80 leading-relaxed">
-                    Continuous monitoring, regular posture reviews, drift alerts, and proactive engineering assistance.
-                  </p>
-                </div>
-              </div>
-
-              {/* Bottom Assurance */}
-              <div className="pt-2 text-center text-xs text-brand-charcoal/70">
-                Aligned with Microsoft Zero Trust & Well-Architected Frameworks
-              </div>
-            </div>
           </div>
         </div>
 
-        {/* 6 Category Summary Grid at the bottom for quick overview */}
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {ENTERPRISE_CATEGORIES.map((cat) => {
-            const Icon = cat.icon;
-            return (
-              <div
-                key={cat.id}
-                className="bg-white rounded-2xl p-6 border border-gray-200/80 shadow-2xs hover:shadow-card hover:border-brand-teal/40 transition-all flex flex-col justify-between group"
-              >
-                <div>
-                  <div className="w-10 h-10 rounded-xl bg-brand-light flex items-center justify-center text-brand-dark group-hover:bg-teal-50 group-hover:text-brand-teal transition-colors mb-4">
-                    <Icon className="w-5 h-5" />
+        {/* Visual 6-Card Overview Grid Featuring Human & Tech Photography */}
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {ENTERPRISE_SERVICES.map((cat) => (
+            <div
+              key={cat.id}
+              className="bg-white rounded-3xl overflow-hidden border border-gray-200/90 shadow-subtle hover:shadow-xl hover:border-brand-teal/40 transition-all duration-300 flex flex-col justify-between group"
+            >
+              <div>
+                {/* Photo Header */}
+                <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-900">
+                  <Image
+                    src={cat.image}
+                    alt={cat.imageAlt}
+                    fill
+                    className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/70 via-transparent to-transparent" />
+                  <div className="absolute bottom-3 left-4 right-4">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-300 block">
+                      {cat.category}
+                    </span>
                   </div>
-                  <h4 className="text-lg font-bold text-brand-dark group-hover:text-brand-green transition-colors">
-                    {cat.category}
+                </div>
+
+                {/* Card Content */}
+                <div className="p-6 space-y-3">
+                  <h4 className="text-xl font-bold text-brand-dark group-hover:text-brand-green transition-colors leading-snug">
+                    {cat.title}
                   </h4>
-                  <p className="text-xs sm:text-sm text-brand-charcoal/80 mt-2 leading-relaxed">
+                  <p className="text-sm text-brand-charcoal/80 leading-relaxed">
                     {cat.shortDesc}
                   </p>
                 </div>
-
-                <div className="mt-5 pt-4 border-t border-gray-100">
-                  <Link
-                    href={cat.link}
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-brand-green group-hover:text-brand-teal transition-colors"
-                  >
-                    <span>Explore Services</span>
-                    <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
-                  </Link>
-                </div>
               </div>
-            );
-          })}
+
+              {/* Card Footer Link */}
+              <div className="p-6 pt-0">
+                <Link
+                  href={cat.link}
+                  className="inline-flex items-center gap-2 text-sm font-bold text-brand-green group-hover:text-brand-teal transition-colors"
+                >
+                  <span>Learn More</span>
+                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

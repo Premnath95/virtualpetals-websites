@@ -1,8 +1,23 @@
 import type { Metadata } from "next";
+import { Manrope, Inter } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import "./globals.css";
 import { COMPANY_INFO } from "@/data/companyData";
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-manrope",
+  display: "swap",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.virtualpetals.com"),
@@ -107,7 +122,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-screen flex flex-col antialiased bg-white text-brand-charcoal selection:bg-brand-green selection:text-white">
+      <body className={`${manrope.variable} ${inter.variable} font-sans min-h-screen flex flex-col antialiased bg-white text-brand-charcoal selection:bg-brand-green selection:text-white`}>
         <Navbar />
         <main className="flex-grow">{children}</main>
         <Footer />
