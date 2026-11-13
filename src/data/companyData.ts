@@ -67,6 +67,8 @@ export const COMPANY_INFO = {
     heading: "Our Business Entities",
     description:
       "NetFuxion Pro is a registered business entity in India, operated and managed by Virtual Petals.",
+    address:
+      "Plot No. 12 4th South Cross St, Kovai Thirunagar 4th St, Indira Nagar, Civil Aerodrome Post, Nehru Nagar West, Coimbatore, Tamil Nadu 641014",
     logoPath: "/partners/netfuxion-pro-logo.png",
   },
   demoUrl: "https://calendly.com/virtualpetals/30min",

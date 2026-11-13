@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Building2, ArrowRight } from "lucide-react";
+import { Building2, ArrowRight, MapPin } from "lucide-react";
 import { COMPANY_INFO } from "@/data/companyData";
 
 export default function PartnerSection() {
@@ -64,6 +64,13 @@ export default function PartnerSection() {
                 <p className="text-sm sm:text-base text-brand-charcoal/85 leading-relaxed">
                   NetFuxion Pro is a registered business entity in India, operated and managed by Virtual Petals.
                 </p>
+
+                <div className="flex items-start gap-2.5 p-3 rounded-xl bg-gray-50 border border-gray-200/80 text-xs sm:text-sm text-brand-charcoal/85">
+                  <MapPin className="w-4 h-4 text-brand-teal shrink-0 mt-0.5" />
+                  <span>
+                    Plot No. 12 4th South Cross St, Kovai Thirunagar 4th St, Indira Nagar, Civil Aerodrome Post, Nehru Nagar West, Coimbatore, Tamil Nadu 641014
+                  </span>
+                </div>
 
                 {/* Action Buttons */}
                 <div className="pt-4 flex flex-wrap items-center gap-3">

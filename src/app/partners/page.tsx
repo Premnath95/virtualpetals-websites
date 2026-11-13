@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Building2, ArrowRight, ShieldCheck, Cpu, Globe, CheckCircle2, ChevronRight, Mail } from "lucide-react";
+import { Building2, ArrowRight, ShieldCheck, Cpu, Globe, CheckCircle2, ChevronRight, Mail, MapPin } from "lucide-react";
 import { COMPANY_INFO } from "@/data/companyData";
 
 export const metadata: Metadata = {
@@ -85,6 +85,12 @@ export default function PartnersPage() {
                     <div className="flex items-center gap-2.5 p-2.5 rounded-xl bg-teal-50/40 border border-brand-teal/15">
                       <ShieldCheck className="w-4 h-4 text-brand-teal shrink-0" />
                       <span>Operated and Managed by Virtual Petals</span>
+                    </div>
+                    <div className="flex items-start gap-2.5 p-2.5 rounded-xl bg-gray-50 border border-gray-200/70">
+                      <MapPin className="w-4 h-4 text-brand-teal shrink-0 mt-0.5" />
+                      <span className="text-xs sm:text-sm text-brand-charcoal/85">
+                        Plot No. 12 4th South Cross St, Kovai Thirunagar 4th St, Indira Nagar, Civil Aerodrome Post, Nehru Nagar West, Coimbatore, Tamil Nadu 641014
+                      </span>
                     </div>
                   </div>
                 </div>
