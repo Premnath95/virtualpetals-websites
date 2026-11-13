@@ -41,6 +41,11 @@ export const COMPANY_INFO = {
       title: "India Technology & Delivery Center",
       address: "Chennai, Tamil Nadu - 603202, India",
     },
+    netfuxion: {
+      title: "NetFuxion Pro Office",
+      address:
+        "Plot No. 12 4th South Cross St, Kovai Thirunagar 4th St, Indira Nagar, Civil Aerodrome Post, Nehru Nagar West, Coimbatore, Tamil Nadu 641014",
+    },
     emails: {
       general: "info@virtualpetals.com",
       contact: "contactus@virtualpetals.com",
