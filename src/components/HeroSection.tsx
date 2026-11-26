@@ -1,233 +1,200 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
-import {
-  ArrowRight,
-  ShieldCheck,
-  Cloud,
-  Layers,
-  Sparkles,
-  Calendar,
-  Lock,
-  Server,
-  Activity,
-  CheckCircle2,
-} from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight, Shield, Cloud, Server, Sparkles } from "lucide-react";
+
+interface SlideData {
+  tag: string;
+  headline: string;
+  description: string;
+  image: string;
+  imageMobile: string;
+  imageAlt: string;
+}
+
+const HERO_SLIDES: SlideData[] = [
+  {
+    tag: "Cybersecurity & Cloud Solutions",
+    headline: "Enterprise Cloud, Cybersecurity & IT Solutions Built for What's Next.",
+    description:
+      "Virtual Petals delivers enterprise cloud solutions, Microsoft 365 services, cybersecurity, IT infrastructure management and DevOps automation to help businesses build secure, scalable and reliable IT environments.",
+    image: "/images/hero/cybersecurity.jpg",
+    imageMobile: "/images/hero/cybersecurity-m.jpg",
+    imageAlt: "Enterprise Security Operations Center team monitoring threat intelligence",
+  },
+  {
+    tag: "Cloud Architecture & Migration",
+    headline: "Cloud engineered for performance, resilience and governance.",
+    description:
+      "Architect, migrate and govern enterprise Microsoft Azure and AWS environments with automated failover, strict compliance benchmarks and proactive FinOps cost management.",
+    image: "/images/hero/cloud.jpg",
+    imageMobile: "/images/hero/cloud-m.jpg",
+    imageAlt: "Enterprise Cloud Architects reviewing hybrid cloud infrastructure",
+  },
+  {
+    tag: "IT Infrastructure & 24/7 Operations",
+    headline: "Reliable infrastructure operations delivering peace of mind 24/7.",
+    description:
+      "Eliminate downtime with round-the-clock infrastructure telemetry, dedicated Tier 2/3 engineering support, immutable disaster recovery and automated patch pipelines.",
+    image: "/images/hero/it-infrastructure.jpg",
+    imageMobile: "/images/hero/it-infrastructure-m.jpg",
+    imageAlt: "Network operations center engineers managing enterprise infrastructure",
+  },
+];
 
 export default function HeroSection() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev === 0 ? HERO_SLIDES.length - 1 : prev - 1));
+  };
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev === HERO_SLIDES.length - 1 ? 0 : prev + 1));
+  };
+
   return (
-    <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden bg-white">
-      {/* Subtle background architectural grid & ambient lighting */}
-      <div className="absolute inset-0 bg-[radial-gradient(#123b32_1px,transparent_1px)] [background-size:32px_32px] opacity-[0.035] pointer-events-none" />
+    <section className="relative overflow-hidden bg-[#EDF3F8]" aria-label="Virtual Petals Enterprise IT Solutions">
+      {/* Hero Stage Container */}
+      <div className="relative min-h-[580px] sm:min-h-[620px] lg:min-h-[660px] xl:min-h-[700px] flex items-center">
+        {/* Background Plates: Real Enterprise IT / SOC Photography */}
+        <div className="absolute inset-0 z-0 overflow-hidden" aria-hidden="true">
+          {HERO_SLIDES.map((slide, idx) => (
+            <div
+              key={idx}
+              className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+                idx === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
+              }`}
+            >
+              {/* Desktop Plate: High-res realistic operations center */}
+              <div className="hidden sm:block absolute inset-0 w-full h-full">
+                <Image
+                  src={slide.image}
+                  alt={slide.imageAlt}
+                  fill
+                  priority={idx === 0}
+                  className="object-cover object-[78%_center] lg:object-[82%_center]"
+                  quality={90}
+                />
+              </div>
 
-      {/* Gold & Emerald lighting glows */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-gradient-to-tr from-brand-teal/10 via-brand-gold/10 to-transparent blur-3xl pointer-events-none rounded-full" />
-      <div className="absolute top-12 right-10 w-80 h-80 bg-brand-light rounded-full blur-3xl pointer-events-none opacity-70" />
+              {/* Mobile Plate */}
+              <div className="sm:hidden absolute inset-0 w-full h-full">
+                <Image
+                  src={slide.imageMobile || slide.image}
+                  alt={slide.imageAlt}
+                  fill
+                  priority={idx === 0}
+                  className="object-cover object-center"
+                  quality={85}
+                />
+              </div>
+            </div>
+          ))}
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          {/* Left Text Column: Procain-Inspired Corporate Authority */}
-          <div className="lg:col-span-7 space-y-7 text-center lg:text-left">
-            {/* Pill Badge with subtle gold glow */}
-            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-brand-light border border-brand-teal/20 shadow-xs">
-              <span className="flex h-2 w-2 rounded-full bg-brand-teal animate-pulse" />
-              <span className="text-xs font-bold text-brand-dark tracking-wider uppercase">
-                Peace of Mind as a Service
-              </span>
-              <span className="text-[11px] font-semibold text-amber-700 bg-amber-50 px-2 py-0.5 rounded-full border border-amber-200/80">
-                Enterprise IT Consulting
-              </span>
+          {/* Desktop Gradient Overlay: Pure White on Left fading smoothly into photo on Right */}
+          <div
+            className="hidden sm:block absolute inset-0 z-20 pointer-events-none"
+            style={{
+              background:
+                "linear-gradient(97deg, #ffffff 0%, rgba(255, 255, 255, 0.985) 30%, rgba(255, 255, 255, 0.90) 44%, rgba(255, 255, 255, 0.52) 58%, rgba(255, 255, 255, 0.12) 66%, rgba(255, 255, 255, 0) 74%)",
+            }}
+          />
+
+          {/* Mobile Overlay: Solid top gradient to ensure crystal-clear text readability */}
+          <div
+            className="sm:hidden absolute inset-0 z-20 pointer-events-none"
+            style={{
+              background:
+                "linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.95) 55%, rgba(255,255,255,0.7) 75%, rgba(255,255,255,0.3) 100%)",
+            }}
+          />
+        </div>
+
+        {/* Carousel Navigation Buttons (Procain style snav) */}
+        <button
+          onClick={prevSlide}
+          aria-label="Previous slide"
+          className="absolute left-3 lg:left-6 xl:left-8 top-1/2 -translate-y-1/2 z-30 w-11 h-11 lg:w-12 lg:h-12 rounded-full bg-white/95 hover:bg-white text-gray-700 hover:text-brand-dark border border-gray-200/90 shadow-md hover:shadow-lg flex items-center justify-center transition-all duration-200"
+        >
+          <ChevronLeft className="w-5 h-5" />
+        </button>
+
+        <button
+          onClick={nextSlide}
+          aria-label="Next slide"
+          className="absolute right-3 lg:right-6 xl:right-8 top-1/2 -translate-y-1/2 z-30 w-11 h-11 lg:w-12 lg:h-12 rounded-full bg-white/95 hover:bg-white text-gray-700 hover:text-brand-dark border border-gray-200/90 shadow-md hover:shadow-lg flex items-center justify-center transition-all duration-200"
+        >
+          <ChevronRight className="w-5 h-5" />
+        </button>
+
+        {/* Hero Content Grid (Left-Aligned, Full-Width Enterprise Blueprint) */}
+        <div className="relative z-20 w-full max-w-[1360px] mx-auto px-6 sm:px-10 lg:px-16 pt-32 pb-16 lg:py-24">
+          <div className="max-w-[620px] lg:max-w-[660px]">
+            {/* Trust Chip / Social Proof Badge */}
+            <div className="inline-flex items-center gap-3 bg-white border border-gray-200/90 rounded-full px-4 py-2 text-xs sm:text-[13px] font-bold text-brand-dark shadow-sm mb-6 animate-fade-in">
+              <span className="text-amber-500 tracking-wider text-sm font-black">★★★★★</span>
+              <span className="text-gray-900 font-bold">Top rated on Google</span>
+              <span className="w-px h-3.5 bg-gray-300" />
+              <span className="text-gray-600 font-medium">ISO 27001 · 20000 · 9001</span>
             </div>
 
-            {/* Main Corporate Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-[64px] font-extrabold text-brand-dark tracking-tight leading-[1.1] text-balance">
-              Enterprise Cloud, Security &amp; IT Solutions{" "}
-              <span className="bg-gradient-to-r from-brand-dark via-brand-teal to-emerald-600 bg-clip-text text-transparent">
-                Built for What's Next.
-              </span>
-            </h1>
-
-            {/* Supporting Description */}
-            <p className="text-lg sm:text-xl text-brand-charcoal/90 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-normal">
-              Virtual Petals delivers managed cloud architecture, Microsoft 365 environments, Zero Trust cybersecurity, and DevOps automation that ensure business resilience, operational agility, and continuous compliance.
+            {/* Category Subtitle */}
+            <p className="text-xs sm:text-sm font-bold uppercase tracking-wider text-brand-teal mb-3">
+              {HERO_SLIDES[currentSlide].tag}
             </p>
 
-            {/* Action CTAs */}
-            <div className="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-              <Link
-                href="#services"
-                className="w-full sm:w-auto gradient-button text-white font-semibold px-8 py-4 rounded-xl shadow-md hover:shadow-lg flex items-center justify-center gap-2.5 group text-base transition-all duration-200 border border-brand-teal/20"
-              >
-                <span>Explore Our Services</span>
-                <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
-              </Link>
+            {/* Headline: Exact User Headline with Bold Corporate Authority */}
+            <h1 className="text-3xl sm:text-5xl lg:text-[52px] xl:text-[58px] font-extrabold text-[#0D241E] tracking-tight leading-[1.08] text-balance">
+              {HERO_SLIDES[currentSlide].headline}
+            </h1>
 
+            {/* Description: Exact User Description */}
+            <p className="text-base sm:text-lg text-brand-charcoal/85 leading-relaxed mt-5 max-w-[560px] font-normal">
+              {HERO_SLIDES[currentSlide].description}
+            </p>
+
+            {/* CTA Buttons (Exact Order & Procain Visual Weight) */}
+            <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+              {/* Primary CTA: Talk to an Expert (Golden Amber with Soft Glow) */}
               <a
                 href="https://calendly.com/virtualpetals/30min"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto bg-white border border-gray-300 hover:border-brand-teal text-brand-dark hover:bg-brand-light/60 font-semibold px-8 py-4 rounded-xl transition-all flex items-center justify-center gap-2 text-base shadow-xs"
+                className="bg-gradient-to-r from-amber-500 via-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-bold px-8 py-4 rounded-xl shadow-[0_8px_20px_rgba(245,158,11,0.35)] hover:shadow-[0_12px_24px_rgba(245,158,11,0.45)] hover:scale-[1.02] transition-all flex items-center justify-center gap-2 text-base text-center"
               >
-                <Calendar className="w-4 h-4 text-brand-teal" />
-                <span>Book a Consultation</span>
+                <span>Talk to an Expert</span>
+                <ArrowRight className="w-4 h-4" />
               </a>
+
+              {/* Secondary CTA: Explore Our Services (Clean White Card Button) */}
+              <Link
+                href="#services"
+                className="bg-white hover:bg-gray-50 text-brand-dark border border-gray-300 font-bold px-8 py-4 rounded-xl shadow-xs hover:border-brand-teal transition-all flex items-center justify-center text-base text-center"
+              >
+                <span>Explore Our Services</span>
+              </Link>
             </div>
 
-            {/* Trust Proof Points */}
-            <div className="pt-8 border-t border-gray-100 grid grid-cols-2 sm:grid-cols-4 gap-4 text-left">
-              <div>
-                <div className="text-xl sm:text-2xl font-extrabold text-brand-dark">Zero Trust</div>
-                <p className="text-xs text-brand-charcoal/70 font-medium mt-0.5">Security Architecture</p>
-              </div>
-
-              <div>
-                <div className="text-xl sm:text-2xl font-extrabold text-brand-teal">Microsoft</div>
-                <p className="text-xs text-brand-charcoal/70 font-medium mt-0.5">Cloud &amp; Azure Stack</p>
-              </div>
-
-              <div>
-                <div className="text-xl sm:text-2xl font-extrabold text-brand-dark">24/7</div>
-                <p className="text-xs text-brand-charcoal/70 font-medium mt-0.5">Operations Coverage</p>
-              </div>
-
-              <div>
-                <div className="text-xl sm:text-2xl font-extrabold text-amber-700">UAE &amp; Global</div>
-                <p className="text-xs text-brand-charcoal/70 font-medium mt-0.5">Enterprise Delivery</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Right Visual Column: 3D Cloud & Security Interactive Console */}
-          <div className="lg:col-span-5 relative">
-            <div className="relative mx-auto max-w-lg lg:max-w-none">
-              {/* Subtle Gold / Teal Ambient Halo */}
-              <div className="absolute -inset-1.5 bg-gradient-to-r from-brand-teal/20 via-brand-gold/20 to-brand-teal/20 rounded-3xl blur-xl opacity-70" />
-
-              {/* Console Canvas Card */}
-              <div className="relative bg-white rounded-3xl border border-gray-200/90 shadow-2xl p-6 sm:p-7 overflow-hidden">
-                {/* Console Header Bar */}
-                <div className="flex items-center justify-between pb-4 border-b border-gray-100">
-                  <div className="flex items-center space-x-2">
-                    <span className="w-3 h-3 rounded-full bg-red-400 inline-block" />
-                    <span className="w-3 h-3 rounded-full bg-yellow-400 inline-block" />
-                    <span className="w-3 h-3 rounded-full bg-brand-green inline-block" />
-                  </div>
-                  <div className="flex items-center gap-1.5 text-xs font-mono text-gray-500">
-                    <Activity className="w-3.5 h-3.5 text-brand-teal animate-pulse" />
-                    <span>tenant-sec-mesh.vp.net</span>
-                  </div>
-                  <span className="px-2.5 py-0.5 text-[10px] font-bold text-brand-dark bg-brand-light rounded border border-brand-teal/30">
-                    PROTECTED
-                  </span>
-                </div>
-
-                {/* Cloud & Security Topology Visualization */}
-                <div className="py-5 space-y-4">
-                  {/* Cloud Core Layer */}
-                  <div className="bg-brand-light/60 rounded-2xl p-4 border border-brand-teal/20">
-                    <div className="flex items-center justify-between mb-2.5">
-                      <div className="flex items-center gap-2">
-                        <Cloud className="w-4 h-4 text-brand-dark" />
-                        <span className="text-xs font-bold text-brand-dark uppercase tracking-wider">
-                          Cloud Infrastructure Layer
-                        </span>
-                      </div>
-                      <span className="text-[11px] text-brand-teal font-semibold">Healthy (99.9%)</span>
-                    </div>
-                    <div className="grid grid-cols-3 gap-2 text-center">
-                      <div className="bg-white rounded-xl p-2.5 border border-gray-100 shadow-2xs">
-                        <span className="block text-xs font-bold text-brand-dark">Microsoft 365</span>
-                        <span className="block text-[10px] text-gray-500">Zero Trust IAM</span>
-                      </div>
-                      <div className="bg-white rounded-xl p-2.5 border border-gray-100 shadow-2xs">
-                        <span className="block text-xs font-bold text-brand-dark">Azure Cloud</span>
-                        <span className="block text-[10px] text-gray-500">High Availability</span>
-                      </div>
-                      <div className="bg-white rounded-xl p-2.5 border border-gray-100 shadow-2xs">
-                        <span className="block text-xs font-bold text-brand-dark">AWS Services</span>
-                        <span className="block text-[10px] text-gray-500">Hybrid Mesh</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Security Posture Telemetry Layer */}
-                  <div className="bg-white rounded-2xl p-4 border border-gray-200/90 shadow-sm space-y-2.5">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2">
-                        <Lock className="w-4 h-4 text-brand-teal" />
-                        <span className="text-xs font-bold text-brand-dark uppercase tracking-wider">
-                          Cybersecurity &amp; Compliance Telemetry
-                        </span>
-                      </div>
-                      <span className="text-[11px] font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded border border-amber-200">
-                        100% Enforced
-                      </span>
-                    </div>
-
-                    <div className="space-y-2 text-xs text-brand-charcoal pt-1">
-                      <div className="flex items-center justify-between">
-                        <span className="flex items-center gap-2">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-brand-teal" />
-                          Conditional Access &amp; FIDO2 MFA
-                        </span>
-                        <span className="font-mono text-[11px] text-brand-dark font-semibold">Active</span>
-                      </div>
-                      <div className="flex items-center justify-between">
-                        <span className="flex items-center gap-2">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-brand-teal" />
-                          Microsoft Defender XDR Threat Isolation
-                        </span>
-                        <span className="font-mono text-[11px] text-brand-dark font-semibold">Guarded</span>
-                      </div>
-                      <div className="flex items-center justify-between">
-                        <span className="flex items-center gap-2">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-brand-green" />
-                          Mito 500+ Automated Daily Checks
-                        </span>
-                        <span className="font-mono text-[11px] text-brand-green font-semibold">Passed</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* DevOps Automation Layer */}
-                  <div className="bg-gray-50 rounded-2xl p-3.5 border border-gray-200/80 flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-lg bg-white border border-gray-200 flex items-center justify-center text-brand-dark shadow-2xs">
-                        <Server className="w-4 h-4 text-brand-dark" />
-                      </div>
-                      <div>
-                        <div className="text-xs font-bold text-brand-dark">DevOps Release Automation</div>
-                        <div className="text-[10px] text-gray-500">Terraform IaC &amp; GitHub Actions</div>
-                      </div>
-                    </div>
-                    <span className="text-xs font-mono text-brand-teal font-semibold">Continuous CI/CD</span>
-                  </div>
-                </div>
-
-                {/* Console Micro Footer */}
-                <div className="pt-3.5 border-t border-gray-100 flex items-center justify-between text-[11px] text-gray-500">
-                  <span className="flex items-center gap-1.5">
-                    <ShieldCheck className="w-3.5 h-3.5 text-brand-teal" />
-                    <span>ISO &amp; Zero Trust Framework Aligned</span>
-                  </span>
-                  <span className="font-semibold text-brand-dark">Virtual Petals SLA 99.9%</span>
-                </div>
-              </div>
-
-              {/* Inset Gold Badge */}
-              <div className="absolute -bottom-4 -left-4 sm:-bottom-5 sm:-left-5 bg-brand-dark text-white p-3.5 rounded-2xl shadow-xl border border-brand-gold/30 flex items-center gap-3">
-                <div className="w-9 h-9 rounded-xl bg-brand-gold/20 border border-brand-gold/40 flex items-center justify-center text-amber-300">
-                  <Sparkles className="w-5 h-5" />
-                </div>
-                <div>
-                  <div className="text-xs font-bold text-white">Featured Proprietary SaaS</div>
-                  <div className="text-[10px] text-gray-300">Mito M365 Security Platform</div>
-                </div>
-              </div>
+            {/* Micro Trust Proof Text */}
+            <div className="mt-5 flex flex-wrap items-center gap-2 text-xs sm:text-sm text-brand-charcoal/75 font-medium">
+              <span>Response within one business day</span>
+              <span className="text-amber-500 font-bold">✦</span>
+              <span>Consulting-led, no lock-in</span>
             </div>
           </div>
         </div>
+
+        {/* Thin Accent Line at Bottom of Hero Section (Exact Procain Benchmark) */}
+        <div
+          className="absolute bottom-0 left-0 right-0 h-[4px] z-30 pointer-events-none"
+          style={{
+            background:
+              "linear-gradient(90deg, #F59E0B 0%, #12B8A6 28%, #35A853 48%, rgba(53, 168, 83, 0) 75%)",
+          }}
+        />
       </div>
     </section>
   );
