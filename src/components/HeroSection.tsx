@@ -17,7 +17,7 @@ const HERO_SLIDES: SlideData[] = [
     tag: "Cybersecurity & Cloud Solutions",
     headline: "Enterprise Cloud, Cybersecurity & IT Solutions Built for What's Next.",
     description:
-      "Virtual Petals delivers enterprise cloud solutions, Microsoft 365 services, cybersecurity, IT infrastructure management and DevOps automation to help businesses build secure, scalable and reliable IT environments.",
+      "Virtual Petals empowers businesses with secure cloud infrastructure, Microsoft 365 solutions, cybersecurity, IT automation and managed IT services.",
     image: "/images/hero/cybersecurity.jpg",
     imageAlt: "Enterprise Security Operations Center team monitoring threat intelligence",
   },
@@ -121,7 +121,7 @@ export default function HeroSection() {
               </a>
 
               <Link className="btn-procain-ghost" href="#services">
-                Explore Our Services
+                Explore Services
               </Link>
             </div>
 
