@@ -70,13 +70,13 @@ export default function HeroSection() {
           ))}
         </div>
 
-        {/* Carousel Prev/Next Buttons */}
+        {/* Carousel Prev/Next Buttons (Visible on XL screens to ensure zero text overlap on tablets) */}
         <button
           onClick={prevSlide}
           id="sPrev"
-          className="snav-btn hidden sm:grid"
+          className="snav-btn hidden xl:grid"
           aria-label="Previous slide"
-          style={{ left: "max(16px, calc((100vw - 1280px)/2 - 34px))" }}
+          style={{ left: "max(24px, calc((100vw - 1320px)/2 - 28px))" }}
         >
           <ChevronLeft className="w-5 h-5" />
         </button>
@@ -84,9 +84,9 @@ export default function HeroSection() {
         <button
           onClick={nextSlide}
           id="sNext"
-          className="snav-btn hidden sm:grid"
+          className="snav-btn hidden xl:grid"
           aria-label="Next slide"
-          style={{ right: "max(16px, calc((100vw - 1280px)/2 - 34px))" }}
+          style={{ right: "max(24px, calc((100vw - 1320px)/2 - 28px))" }}
         >
           <ChevronRight className="w-5 h-5" />
         </button>
