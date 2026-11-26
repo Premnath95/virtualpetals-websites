@@ -60,10 +60,10 @@ export default function Navbar() {
   return (
     <header
       ref={navRef}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white h-20 flex items-center ${
         isScrolled
-          ? "border-b border-gray-200/90 shadow-sm py-3"
-          : "border-b border-gray-100 py-4"
+          ? "border-b border-gray-200/90 shadow-sm"
+          : "border-b border-gray-100"
       }`}
     >
       <div className="w-full max-w-[1360px] mx-auto px-6 sm:px-10 lg:px-16">
@@ -230,7 +230,7 @@ export default function Navbar() {
               href="https://calendly.com/virtualpetals/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white text-sm font-bold px-6 py-2.5 rounded-xl shadow-[0_4px_14px_rgba(245,158,11,0.35)] hover:shadow-[0_6px_18px_rgba(245,158,11,0.45)] hover:scale-[1.02] transition-all flex items-center gap-1.5"
+              className="btn-procain-primary !h-11 !px-6 !text-sm"
             >
               <span>Talk to an Expert</span>
             </a>
