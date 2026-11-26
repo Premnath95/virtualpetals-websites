@@ -52,7 +52,7 @@ export default function TermsPage() {
           <div>
             <h2 className="text-xl font-bold text-brand-dark mb-3">4. Software Application Usage (Mito)</h2>
             <p>
-              Access to our proprietary security assessment platform, Mito (mito.virtualpetals.com), requires explicit tenant authorization by an authorized Microsoft 365 Global Administrator. Mito is provided strictly as a read-only assessment and configuration monitoring tool. Users agree not to attempt to reverse engineer, decompile, or compromise the integrity of the application platform.
+              Access to our proprietary security assessment platform, Mito (mito-app.virtualpetals.com), requires explicit tenant authorization by an authorized Microsoft 365 Global Administrator. Mito is provided strictly as a read-only assessment and configuration monitoring tool. Users agree not to attempt to reverse engineer, decompile, or compromise the integrity of the application platform.
             </p>
           </div>
 

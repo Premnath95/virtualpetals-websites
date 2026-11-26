@@ -117,7 +117,7 @@ export default function MitoShowcase() {
             <a
               id="mito-launch-button"
               data-testid="launch-mito-button"
-              href="http://mito.virtualpetals.com/"
+              href="https://mito-app.virtualpetals.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="gradient-button text-white font-semibold px-8 py-4 rounded-xl shadow-md flex items-center gap-2 text-base hover:shadow-lg transition-all"
@@ -184,7 +184,7 @@ export default function MitoShowcase() {
                 <span className="w-3 h-3 rounded-full bg-brand-green inline-block" />
               </div>
               <span className="text-xs font-mono text-gray-500 truncate max-w-xs sm:max-w-none">
-                http://mito.virtualpetals.com
+                https://mito-app.virtualpetals.com
               </span>
               <span className="text-xs font-semibold text-brand-green bg-brand-light px-2.5 py-0.5 rounded border border-brand-green/20">
                 Verified Live UI

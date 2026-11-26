@@ -1,111 +1,146 @@
+"use client";
+
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
-import { Target, Eye, Sparkles, CheckCircle2, ArrowRight } from "lucide-react";
+import {
+  ShieldCheck,
+  Target,
+  Eye,
+  CheckCircle2,
+  Sparkles,
+  ArrowRight,
+  Lock,
+  Server,
+  Cloud,
+  Workflow,
+  Globe,
+} from "lucide-react";
 import { COMPANY_INFO } from "@/data/companyData";
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-20 md:py-28 bg-white relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-light text-brand-dark text-xs font-semibold tracking-wide uppercase">
-            About Virtual Petals
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-brand-dark tracking-tight">
-            Technology That Moves Your Business Forward.
-          </h2>
-          <p className="text-base sm:text-lg text-brand-charcoal/80 leading-relaxed">
-            {COMPANY_INFO.description}
-          </p>
+    <section id="about" className="py-24 md:py-32 bg-white relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Editorial Eyebrow */}
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-light border border-brand-teal/20 text-brand-dark text-xs font-bold tracking-wider uppercase mb-5">
+          <Sparkles className="w-3.5 h-3.5 text-brand-teal" />
+          <span>About Virtual Petals</span>
         </div>
 
-        {/* Grid: Who We Are + Mission & Vision */}
-        <div className="mt-16 grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-          {/* Who We Are Card */}
-          <div className="lg:col-span-6 bg-brand-light/60 rounded-2xl p-8 border border-brand-green/20 flex flex-col justify-between">
-            <div className="space-y-4">
-              <div className="w-12 h-12 rounded-xl bg-white border border-brand-green/20 flex items-center justify-center text-brand-green shadow-xs">
-                <Sparkles className="w-6 h-6" />
-              </div>
-              <h3 className="text-2xl font-bold text-brand-dark">Who We Are</h3>
-              <p className="text-brand-charcoal/90 leading-relaxed text-sm sm:text-base">
-                Virtual Petals is a technology solutions and consulting company founded to bridge the gap between complex enterprise technologies and everyday business operations.
+        {/* Top Split Layout: Corporate Narrative & Facility Visual */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          {/* Left Text Column */}
+          <div className="lg:col-span-7 space-y-6">
+            <h2 className="text-3xl sm:text-5xl lg:text-[48px] font-extrabold text-brand-dark tracking-tight leading-[1.14]">
+              Protecting Confidentiality, Availability &amp; Integrity{" "}
+              <span className="text-brand-teal">Through Engineering Discipline.</span>
+            </h2>
+
+            <div className="space-y-4 text-base sm:text-lg text-brand-charcoal/85 leading-relaxed font-normal">
+              <p>
+                Virtual Petals is an international IT solutions and technology consulting company dedicated to engineering resilient, secure, and modern digital environments. We partner with business leaders and enterprise IT departments to eliminate operational friction and ensure absolute peace of mind.
               </p>
-              <p className="text-brand-charcoal/80 leading-relaxed text-sm sm:text-base">
-                Operating with enterprise delivery capabilities across the UAE and India, we specialize in architecting secure Microsoft 365 environments, scalable Azure cloud infrastructures, endpoint governance, and DevOps modernization.
+              <p>
+                With cross-border delivery capabilities across the United Arab Emirates (Abu Dhabi) and India (operated through our registered business entity NetFuxion Pro in Coimbatore), our certified systems engineers bring specialized expertise in Microsoft 365 governance, hybrid Azure and AWS cloud infrastructure, Zero Trust cybersecurity, and automated DevOps pipelines.
               </p>
             </div>
 
-            <div className="pt-6">
+            {/* Core Architectural Pillars */}
+            <div className="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-3.5 border-t border-gray-100">
+              <div className="flex items-start gap-2.5">
+                <CheckCircle2 className="w-5 h-5 text-brand-teal shrink-0 mt-0.5" />
+                <span className="text-sm text-brand-charcoal font-medium">
+                  <strong>Cloud Transformation:</strong> Azure &amp; AWS architecture.
+                </span>
+              </div>
+              <div className="flex items-start gap-2.5">
+                <CheckCircle2 className="w-5 h-5 text-brand-dark shrink-0 mt-0.5" />
+                <span className="text-sm text-brand-charcoal font-medium">
+                  <strong>Zero Trust Cybersecurity:</strong> Continuous threat isolation.
+                </span>
+              </div>
+              <div className="flex items-start gap-2.5">
+                <CheckCircle2 className="w-5 h-5 text-brand-teal shrink-0 mt-0.5" />
+                <span className="text-sm text-brand-charcoal font-medium">
+                  <strong>DevOps Automation:</strong> Fast, repeatable CI/CD delivery.
+                </span>
+              </div>
+              <div className="flex items-start gap-2.5">
+                <CheckCircle2 className="w-5 h-5 text-brand-dark shrink-0 mt-0.5" />
+                <span className="text-sm text-brand-charcoal font-medium">
+                  <strong>24/7 Managed IT:</strong> SLA-backed operational peace of mind.
+                </span>
+              </div>
+            </div>
+
+            <div className="pt-4 flex items-center gap-4">
               <Link
                 href="/about"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-brand-green hover:text-brand-greenDark group"
+                className="gradient-button text-white text-sm font-semibold px-6 py-3.5 rounded-xl shadow-xs inline-flex items-center gap-2 group"
               >
-                <span>Read our company profile</span>
+                <span>Read Full Company Profile</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </div>
           </div>
 
-          {/* Mission & Vision Column */}
-          <div className="lg:col-span-6 grid grid-cols-1 gap-6">
-            {/* Our Mission */}
-            <div className="bg-white rounded-2xl p-8 border border-gray-200/90 shadow-card hover:border-brand-teal/40 transition-all">
-              <div className="flex items-start gap-4">
-                <div className="w-11 h-11 rounded-xl bg-teal-50 border border-brand-teal/20 flex items-center justify-center text-brand-teal shrink-0">
-                  <Target className="w-5 h-5" />
-                </div>
-                <div className="space-y-2">
-                  <h3 className="text-xl font-bold text-brand-dark">Our Mission</h3>
-                  <p className="text-brand-charcoal/85 text-sm sm:text-base leading-relaxed">
-                    {COMPANY_INFO.mission}
-                  </p>
-                </div>
-              </div>
-            </div>
+          {/* Right Image Column: High-Resolution Corporate Team & Offices */}
+          <div className="lg:col-span-5 relative">
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/3] sm:aspect-[16/11] border border-gray-100 group">
+              <Image
+                src="/images/who-we-are-team.jpg"
+                alt="Virtual Petals technology consulting team in modern corporate workspace"
+                fill
+                className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/75 via-transparent to-transparent" />
 
-            {/* Our Vision */}
-            <div className="bg-white rounded-2xl p-8 border border-gray-200/90 shadow-card hover:border-brand-green/40 transition-all">
-              <div className="flex items-start gap-4">
-                <div className="w-11 h-11 rounded-xl bg-brand-light border border-brand-green/20 flex items-center justify-center text-brand-green shrink-0">
-                  <Eye className="w-5 h-5" />
+              {/* Bottom Inset Credibility Pill */}
+              <div className="absolute bottom-5 left-5 right-5 p-4 rounded-2xl bg-white/95 backdrop-blur-md shadow-lg border border-white/40 flex items-center justify-between">
+                <div>
+                  <span className="block text-[11px] font-bold uppercase tracking-wider text-brand-dark">
+                    Enterprise IT Practice
+                  </span>
+                  <span className="block text-xs sm:text-sm font-bold text-brand-charcoal">
+                    Operating across UAE &amp; India delivery centres
+                  </span>
                 </div>
-                <div className="space-y-2">
-                  <h3 className="text-xl font-bold text-brand-dark">Our Vision</h3>
-                  <p className="text-brand-charcoal/85 text-sm sm:text-base leading-relaxed">
-                    {COMPANY_INFO.vision}
-                  </p>
+                <div className="w-9 h-9 rounded-xl bg-brand-light flex items-center justify-center text-brand-teal shrink-0">
+                  <ShieldCheck className="w-5 h-5" />
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Our Values */}
-        <div className="mt-16">
-          <div className="text-center max-w-xl mx-auto mb-10">
-            <h3 className="text-2xl font-bold text-brand-dark">Our Core Values</h3>
-            <p className="text-sm text-gray-500 mt-2">
-              The foundational principles that guide every client partnership, technical engagement, and solution we deliver.
+        {/* Mission & Vision Banners */}
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="bg-brand-light/60 rounded-3xl p-8 border border-brand-teal/20 space-y-3">
+            <div className="w-10 h-10 rounded-xl bg-white border border-brand-teal/20 flex items-center justify-center text-brand-dark shadow-2xs">
+              <Target className="w-5 h-5" />
+            </div>
+            <span className="text-xs font-bold uppercase tracking-wider text-brand-dark block">
+              Our Mission
+            </span>
+            <h3 className="text-xl font-bold text-brand-dark">Empowering Business Resilience</h3>
+            <p className="text-sm text-brand-charcoal/85 leading-relaxed">
+              {COMPANY_INFO.mission}
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-            {COMPANY_INFO.values.map((val, idx) => (
-              <div
-                key={val.title}
-                className="bg-white rounded-xl p-5 border border-gray-100 shadow-subtle hover:shadow-card hover:-translate-y-1 transition-all duration-200"
-              >
-                <div className="w-8 h-8 rounded-lg bg-brand-light flex items-center justify-center text-brand-green font-bold text-xs mb-3">
-                  0{idx + 1}
-                </div>
-                <h4 className="font-bold text-brand-dark text-base">{val.title}</h4>
-                <p className="text-xs text-brand-charcoal/80 mt-1.5 leading-relaxed">
-                  {val.description}
-                </p>
-              </div>
-            ))}
+          <div className="bg-teal-50/50 rounded-3xl p-8 border border-brand-teal/20 space-y-3">
+            <div className="w-10 h-10 rounded-xl bg-white border border-brand-teal/20 flex items-center justify-center text-brand-teal shadow-2xs">
+              <Eye className="w-5 h-5" />
+            </div>
+            <span className="text-xs font-bold uppercase tracking-wider text-brand-teal block">
+              Our Vision
+            </span>
+            <h3 className="text-xl font-bold text-brand-dark">Trusted Global Cloud Leadership</h3>
+            <p className="text-sm text-brand-charcoal/85 leading-relaxed">
+              {COMPANY_INFO.vision}
+            </p>
           </div>
         </div>
       </div>

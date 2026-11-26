@@ -9,7 +9,7 @@ This repository contains the complete modern redesign and development of the **V
 - **Core Focus:** Modern Microsoft 365 Solutions, Azure Cloud Architecture, Zero Trust Cybersecurity & Compliance, Intune Endpoint Management, and DevOps Automation.
 - **Offices:**
   - **UAE Regional Office:** Level 36, Etihad Towers 3, Abu Dhabi, United Arab Emirates (P.O. Box: 28686)
-  - **India Delivery Center:** Chennai, Tamil Nadu - 603202, India
+  - **India Office (NetFuxion Pro):** Plot No. 12 4th South Cross St, Kovai Thirunagar 4th St, Indira Nagar, Civil Aerodrome Post, Nehru Nagar West, Coimbatore, Tamil Nadu 641014
   - **Contact Phone:** +971 2 409 3026
   - **Contact Email:** info@virtualpetals.com / contactus@virtualpetals.com
 
@@ -17,9 +17,9 @@ This repository contains the complete modern redesign and development of the **V
 
 1. **Flagship Product – Mito:**
    - Microsoft 365 Security & Compliance Platform
-   - Official Mito Website: [http://mito.virtualpetals.com/](http://mito.virtualpetals.com/)
+   - Official Mito Website: [https://mito-app.virtualpetals.com/](https://mito-app.virtualpetals.com/)
    - Demo Scheduling: [calendly.com/virtualpetals/30min](https://calendly.com/virtualpetals/30min)
-   - 400+ automated daily security checks, 100% read-only tenant review, daily drift detection, hosted in Azure UAE North.
+   - 500+ automated daily security checks, 100% read-only tenant review, daily drift detection, hosted in Azure UAE North.
 2. **Strategic Partner – NETFUXION PRO:**
    - Featured technology partner with official green branding and IT solutions collaboration.
 

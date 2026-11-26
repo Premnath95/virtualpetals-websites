@@ -15,65 +15,94 @@ import {
   Terminal,
   ChevronRight,
   ExternalLink,
+  Shield,
+  Clock,
+  Sparkles,
+  BarChart3,
+  Cpu,
+  RefreshCw,
+  Zap,
 } from "lucide-react";
 import { COMPANY_INFO } from "@/data/companyData";
 
 export const metadata: Metadata = {
-  title: "Mito – Microsoft 365 Security & Compliance Platform",
+  title: "Mito – Microsoft 365 Security & Compliance Platform | Virtual Petals",
   description:
-    "Mito runs 400+ read-only automated security checks against your Microsoft 365 tenant daily, discovers risky configurations, and shows what changed since yesterday.",
+    "Mito runs 500+ read-only automated security checks against your Microsoft 365 tenant daily, discovers risky configurations, audits Entra ID and Exchange, and pinpoints configuration drift.",
 };
 
-const FEATURES_LIST = [
+const MITO_PILLARS = [
   {
-    title: "400+ Automated Security Checks",
-    desc: "Rigorous automated baseline checks executed daily against Entra ID, Exchange, Teams, and SharePoint.",
+    icon: ShieldCheck,
+    title: "500+ Automated Security Checks",
+    desc: "Continuous, automated evaluation of tenant configurations across Microsoft Entra ID, Exchange Online, Microsoft Teams, SharePoint, and OneDrive.",
   },
   {
-    title: "Microsoft 365 Security Assessment",
-    desc: "Identifies exposed sharing links, weak tenant-wide settings, and unauthorized application permissions.",
+    icon: Lock,
+    title: "100% Read-Only Guarantee",
+    desc: "Mito operates strictly with read-only API permissions. It never modifies configurations, alters mailbox rules, or deletes client tenant data.",
   },
   {
-    title: "Microsoft Entra ID Security Assessment",
-    desc: "Audits administrative roles, Privileged Identity Management (PIM), risky sign-ins, and emergency access accounts.",
+    icon: RefreshCw,
+    title: "Automated Daily Drift Detection",
+    desc: "Daily automated assessment runs track posture changes over time, instantly highlighting newly opened risks or resolved security findings.",
   },
   {
-    title: "Exchange Online Configuration Checks",
-    desc: "Detects unauthorized external mail forwarding rules, basic authentication usage, and mailbox delegation anomalies.",
+    icon: Layers,
+    title: "CIS & CISA Industry Baselines",
+    desc: "Evaluates your tenant against established industry benchmarks including CIS Microsoft 365 Foundations and CISA cloud security baselines.",
   },
   {
-    title: "Security Baseline Analysis",
-    desc: "Evaluates your tenant against established industry benchmarks including CIS Microsoft 365 Foundations and CISA baselines.",
+    icon: Eye,
+    title: "Privileged Identity & Role Auditing",
+    desc: "Deep audits into Global Administrator assignments, break-glass emergency accounts, Privileged Identity Management (PIM), and credential hygiene.",
   },
   {
-    title: "Compliance & Posture Insights",
-    desc: "Tracks security maturity over time, providing visibility into compliance drift before annual audits occur.",
+    icon: FileText,
+    title: "Executive & Remediation Reporting",
+    desc: "Generates clear pass/fail breakdowns, severity-ranked remediation guidance, and direct administrator center links for rapid resolution.",
+  },
+];
+
+const ASSESSMENT_CATEGORIES = [
+  {
+    name: "Microsoft Entra ID (Azure AD)",
+    checks: "180+ Automated Checks",
+    highlight: "MFA enforcement, Conditional Access policy gaps, legacy auth protocols, app registration permissions, and dormant admin accounts.",
   },
   {
-    title: "Risk Identification & Severity Ranking",
-    desc: "Categorizes findings into High, Medium, and Low severity so engineering teams know exactly what to address first.",
+    name: "Exchange Online",
+    checks: "140+ Automated Checks",
+    highlight: "External mail forwarding rules, mailbox delegation, transport security, basic auth protocols, SPF/DKIM/DMARC configurations.",
   },
   {
-    title: "Actionable Recommendations",
-    desc: "Provides clear, step-by-step remediation guidance with direct links to the relevant Microsoft Admin Centers.",
+    name: "SharePoint & OneDrive for Business",
+    checks: "90+ Automated Checks",
+    highlight: "External sharing policies, anonymous access links, default link permissions, guest domain restrictions, and access expiry limits.",
   },
   {
-    title: "Detailed Security Reporting",
-    desc: "Automated executive and technical reports highlighting pass/fail rates, high-priority vulnerabilities, and historical trends.",
+    name: "Microsoft Teams & Collaboration",
+    checks: "50+ Automated Checks",
+    highlight: "Guest calling permissions, external domain federation, cloud file storage providers, meeting recording policies, and private channel governance.",
   },
   {
-    title: "Read-Only Assessment Approach",
-    desc: "Zero write permissions required. Mito never makes modifications or deletes data within your Microsoft 365 tenant.",
+    name: "Microsoft Defender & Intune Compliance",
+    checks: "60+ Automated Checks",
+    highlight: "Safe Attachments, Safe Links, anti-phishing protection policies, endpoint compliance profiles, and device compliance health.",
   },
 ];
 
 export default function MitoProductPage() {
   return (
-    <div className="pt-28 pb-20">
-      {/* Breadcrumb & Hero */}
-      <section className="bg-brand-light/50 py-16 sm:py-20 border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <nav className="flex items-center gap-2 text-xs font-medium text-gray-500 mb-6">
+    <div className="pt-28 pb-20 bg-white">
+      {/* Editorial Breadcrumb & Hero */}
+      <section className="bg-brand-light/60 py-16 sm:py-24 border-b border-gray-100 relative overflow-hidden">
+        {/* Subtle decorative gold lighting */}
+        <div className="absolute top-0 right-1/4 w-96 h-96 bg-brand-gold/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-10 w-80 h-80 bg-brand-teal/15 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <nav className="flex items-center gap-2 text-xs font-semibold text-gray-500 mb-8 uppercase tracking-wider">
             <Link href="/" className="hover:text-brand-green transition-colors">
               Home
             </Link>
@@ -82,14 +111,14 @@ export default function MitoProductPage() {
               Products
             </Link>
             <ChevronRight className="w-3.5 h-3.5" />
-            <span className="text-brand-dark font-semibold">Mito</span>
+            <span className="text-brand-dark">Mito</span>
           </nav>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-brand-teal/20 text-brand-dark text-xs font-bold uppercase tracking-wider">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-brand-teal/20 text-brand-dark text-xs font-bold uppercase tracking-wider shadow-2xs">
                 <ShieldCheck className="w-4 h-4 text-brand-teal" />
-                <span>Microsoft 365 Security & Compliance Platform</span>
+                <span>Proprietary SaaS Platform</span>
               </div>
 
               <div className="py-1">
@@ -103,22 +132,22 @@ export default function MitoProductPage() {
                 />
               </div>
 
-              <h1 className="text-3xl sm:text-5xl font-extrabold text-brand-dark tracking-tight leading-tight">
-                {COMPANY_INFO.product.headline}
+              <h1 className="text-3xl sm:text-5xl font-extrabold text-brand-dark tracking-tight leading-[1.12]">
+                Smarter Microsoft 365 Security & Compliance Assessment.
               </h1>
 
-              <p className="text-base sm:text-lg text-brand-charcoal/85 leading-relaxed">
-                {COMPANY_INFO.product.description}
+              <p className="text-base sm:text-lg text-brand-charcoal/85 leading-relaxed font-normal">
+                Mito automatically reviews your Microsoft 365 tenant against 500+ security baselines daily, identifying exposed data, misconfigurations, and compliance risks with 100% read-only tenant safety.
               </p>
 
               <div className="pt-2 flex flex-wrap items-center gap-4">
                 <a
-                  href="http://mito.virtualpetals.com/"
+                  href="https://mito-app.virtualpetals.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="gradient-button text-white font-semibold px-7 py-3.5 rounded-xl shadow-md flex items-center gap-2 text-sm sm:text-base"
+                  className="gradient-button text-white font-semibold px-7 py-3.5 rounded-xl shadow-md flex items-center gap-2 text-sm sm:text-base hover:shadow-lg transition-all"
                 >
-                  <span>Launch Mito</span>
+                  <span>Launch Mito Application</span>
                   <ArrowUpRight className="w-4 h-4" />
                 </a>
 
@@ -126,47 +155,78 @@ export default function MitoProductPage() {
                   href={COMPANY_INFO.demoUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="gradient-teal-button text-white font-semibold px-7 py-3.5 rounded-xl shadow-md flex items-center gap-2 text-sm sm:text-base"
+                  className="gradient-teal-button text-white font-semibold px-7 py-3.5 rounded-xl shadow-md flex items-center gap-2 text-sm sm:text-base hover:shadow-lg transition-all"
                 >
                   <Calendar className="w-4 h-4" />
-                  <span>Book a Free Demo</span>
+                  <span>Book 30-Min Live Demo</span>
                 </a>
+              </div>
+
+              <div className="pt-2 flex items-center gap-6 text-xs text-brand-charcoal/80 font-medium">
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-brand-green" />
+                  <span>Zero write permissions</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-brand-green" />
+                  <span>Azure UAE North Hosted</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-brand-green" />
+                  <span>~10-min setup</span>
+                </div>
               </div>
             </div>
 
+            {/* Quick Specs Card */}
             <div className="lg:col-span-5">
-              <div className="bg-white rounded-3xl p-6 border border-gray-200 shadow-card space-y-4">
+              <div className="bg-white rounded-3xl p-7 border border-gray-200/90 shadow-xl space-y-5">
                 <div className="flex items-center justify-between pb-4 border-b border-gray-100">
-                  <span className="text-xs font-bold text-gray-500 uppercase tracking-wider">Platform Specs</span>
-                  <span className="text-xs font-semibold text-brand-green bg-brand-light px-2.5 py-1 rounded-full">
-                    Production Ready
+                  <div className="flex items-center gap-2">
+                    <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
+                    <span className="text-xs font-bold text-brand-dark uppercase tracking-wider">Mito Platform Specs</span>
+                  </div>
+                  <span className="text-xs font-bold text-brand-teal bg-brand-light px-3 py-1 rounded-full border border-brand-teal/20">
+                    Production v2.4
                   </span>
                 </div>
 
-                <div className="space-y-3 text-xs text-brand-charcoal/90">
+                <div className="space-y-3.5 text-xs text-brand-charcoal/90">
                   <div className="flex justify-between py-1.5 border-b border-gray-50">
-                    <span className="text-gray-500">Security Checks</span>
-                    <span className="font-bold text-brand-dark">400+ Automated Daily</span>
+                    <span className="text-gray-500 font-medium">Automated Checks</span>
+                    <span className="font-bold text-brand-dark">500+ Evaluated Daily</span>
                   </div>
                   <div className="flex justify-between py-1.5 border-b border-gray-50">
-                    <span className="text-gray-500">Access Mode</span>
-                    <span className="font-bold text-brand-green">100% Read-Only</span>
+                    <span className="text-gray-500 font-medium">Tenant Impact</span>
+                    <span className="font-bold text-emerald-600">100% Read-Only Guaranteed</span>
                   </div>
                   <div className="flex justify-between py-1.5 border-b border-gray-50">
-                    <span className="text-gray-500">Hosting Cloud</span>
+                    <span className="text-gray-500 font-medium">Hosting Region</span>
                     <span className="font-bold text-brand-dark">Microsoft Azure (UAE North)</span>
                   </div>
                   <div className="flex justify-between py-1.5 border-b border-gray-50">
-                    <span className="text-gray-500">Baseline Frameworks</span>
+                    <span className="text-gray-500 font-medium">Baseline Frameworks</span>
                     <span className="font-bold text-brand-dark">CIS M365 Foundations · CISA</span>
                   </div>
                   <div className="flex justify-between py-1.5 border-b border-gray-50">
-                    <span className="text-gray-500">Onboarding Time</span>
-                    <span className="font-bold text-brand-teal">~10 Minutes (Scripted)</span>
+                    <span className="text-gray-500 font-medium">Drift Detection</span>
+                    <span className="font-bold text-brand-teal">Automated Daily Delta Log</span>
+                  </div>
+                  <div className="flex justify-between py-1.5 border-b border-gray-50">
+                    <span className="text-gray-500 font-medium">Onboarding Time</span>
+                    <span className="font-bold text-brand-dark">Under 10 Minutes</span>
                   </div>
                   <div className="flex justify-between py-1.5">
-                    <span className="text-gray-500">Support Contact</span>
-                    <span className="font-bold text-brand-dark">{COMPANY_INFO.product.supportEmail}</span>
+                    <span className="text-gray-500 font-medium">Official Portal</span>
+                    <a
+                      href="https://mito-app.virtualpetals.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-bold text-brand-green hover:underline inline-flex items-center gap-1"
+                    >
+                      <span>mito-app.virtualpetals.com</span>
+                      <ArrowUpRight className="w-3 h-3" />
+                    </a>
                   </div>
                 </div>
               </div>
@@ -175,23 +235,34 @@ export default function MitoProductPage() {
         </div>
       </section>
 
-      {/* Actual Application Screenshots Grid */}
-      <section className="py-16 bg-white">
+      {/* Real Application Dashboard Screenshots Grid */}
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-          <div className="text-center max-w-2xl mx-auto">
-            <h2 className="text-3xl font-extrabold text-brand-dark">Real Application Dashboard Previews</h2>
-            <p className="text-sm text-gray-500 mt-2">
-              Verified interface screenshots showing tenant assessment metrics, failure ranking, and historical execution logs.
+          <div className="text-center max-w-2xl mx-auto space-y-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-light text-brand-dark text-xs font-bold uppercase tracking-wider">
+              <BarChart3 className="w-3.5 h-3.5 text-brand-teal" />
+              <span>Real Platform Interface</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-brand-dark tracking-tight">
+              Verified Production Application Previews
+            </h2>
+            <p className="text-sm sm:text-base text-brand-charcoal/80">
+              Live interface views demonstrating posture scorecards, failure severity rankings, and daily automated execution logs.
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
             {/* Screenshot 1 */}
-            <div className="bg-white rounded-3xl border border-gray-200 shadow-card overflow-hidden flex flex-col justify-between">
+            <div className="bg-white rounded-3xl border border-gray-200 shadow-xl overflow-hidden flex flex-col justify-between">
               <div>
-                <div className="bg-gray-100 px-4 py-3 border-b border-gray-200 flex items-center justify-between text-xs text-gray-500 font-mono">
-                  <span>Mito Assessment Overview</span>
-                  <span className="text-brand-green font-semibold">Tenant Score & Failures</span>
+                <div className="bg-gray-100/80 px-4 py-3 border-b border-gray-200 flex items-center justify-between text-xs text-gray-500 font-mono">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2.5 h-2.5 rounded-full bg-red-400" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-yellow-400" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-400" />
+                    <span className="font-semibold text-brand-dark ml-2">Assessment Scorecard</span>
+                  </div>
+                  <span className="text-brand-teal font-semibold">Tenant Baseline Results</span>
                 </div>
                 <div className="relative aspect-[16/10] w-full bg-slate-50">
                   <Image
@@ -199,23 +270,29 @@ export default function MitoProductPage() {
                     alt="Mito Dashboard Assessment Results"
                     fill
                     className="object-contain object-top"
+                    priority
                   />
                 </div>
               </div>
-              <div className="p-5 border-t border-gray-100 bg-gray-50/50">
-                <h3 className="font-bold text-brand-dark text-sm">Security Findings & Baseline Failures</h3>
-                <p className="text-xs text-gray-500 mt-1">
-                  Categorized summary of passed versus failed checks with instant visibility into high-severity risks like unblocked legacy authentication and missing phishing-resistant MFA.
+              <div className="p-6 border-t border-gray-100 bg-gray-50/50">
+                <h3 className="font-bold text-brand-dark text-base">Security Score & Findings Severity</h3>
+                <p className="text-xs sm:text-sm text-brand-charcoal/80 mt-1 leading-relaxed">
+                  Clear overview of passed versus failed checks categorized into High, Medium, and Low severity. Instant visibility into unblocked legacy authentication and missing phishing-resistant MFA.
                 </p>
               </div>
             </div>
 
             {/* Screenshot 2 */}
-            <div className="bg-white rounded-3xl border border-gray-200 shadow-card overflow-hidden flex flex-col justify-between">
+            <div className="bg-white rounded-3xl border border-gray-200 shadow-xl overflow-hidden flex flex-col justify-between">
               <div>
-                <div className="bg-gray-100 px-4 py-3 border-b border-gray-200 flex items-center justify-between text-xs text-gray-500 font-mono">
-                  <span>Mito Assessment Engine</span>
-                  <span className="text-brand-teal font-semibold">Daily Run Tracking</span>
+                <div className="bg-gray-100/80 px-4 py-3 border-b border-gray-200 flex items-center justify-between text-xs text-gray-500 font-mono">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2.5 h-2.5 rounded-full bg-red-400" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-yellow-400" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-400" />
+                    <span className="font-semibold text-brand-dark ml-2">Automated Assessment Engine</span>
+                  </div>
+                  <span className="text-brand-green font-semibold">Daily Runs & Drift</span>
                 </div>
                 <div className="relative aspect-[16/10] w-full bg-slate-50">
                   <Image
@@ -226,71 +303,137 @@ export default function MitoProductPage() {
                   />
                 </div>
               </div>
-              <div className="p-5 border-t border-gray-100 bg-gray-50/50">
-                <h3 className="font-bold text-brand-dark text-sm">Automated Daily Runs & Drift Detection</h3>
-                <p className="text-xs text-gray-500 mt-1">
-                  Mito tracks recurring scheduled daily runs, showing exact changes since the previous day (new failures and resolved issues).
+              <div className="p-6 border-t border-gray-100 bg-gray-50/50">
+                <h3 className="font-bold text-brand-dark text-base">Daily Automated Run Tracking</h3>
+                <p className="text-xs sm:text-sm text-brand-charcoal/80 mt-1 leading-relaxed">
+                  Scheduled daily assessments compare findings against the previous snapshot. Pinpoint exactly when a tenant setting changed or an unauthorized forwarding rule appeared.
                 </p>
               </div>
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* 10 Key Features */}
-          <div className="pt-8">
-            <div className="text-center max-w-2xl mx-auto mb-12">
-              <h2 className="text-3xl font-extrabold text-brand-dark">Comprehensive Security & Compliance Capabilities</h2>
-              <p className="text-sm text-gray-500 mt-2">
-                Built specifically to solve the configuration oversight challenges faced by modern Microsoft 365 environments.
-              </p>
-            </div>
+      {/* 6 Core Architecture Pillars */}
+      <section className="py-20 bg-gray-50 border-t border-b border-gray-200/70">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto mb-14 space-y-3">
+            <span className="text-xs font-bold uppercase tracking-wider text-brand-teal">
+              Engineered for Enterprise Governance
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-brand-dark tracking-tight">
+              Why IT Teams Rely on Mito
+            </h2>
+            <p className="text-sm sm:text-base text-brand-charcoal/80">
+              Eliminate blind spots across your Microsoft cloud estate with continuous automated auditing.
+            </p>
+          </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {FEATURES_LIST.map((feat, idx) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {MITO_PILLARS.map((pillar, idx) => {
+              const Icon = pillar.icon;
+              return (
                 <div
                   key={idx}
-                  className="bg-white rounded-2xl p-6 border border-gray-200 shadow-subtle hover:shadow-card hover:border-brand-green/30 transition-all flex items-start gap-4"
+                  className="bg-white rounded-3xl p-7 border border-gray-200/90 shadow-subtle hover:shadow-xl hover:border-brand-teal/40 transition-all flex flex-col justify-between"
                 >
-                  <div className="w-9 h-9 rounded-xl bg-brand-light flex items-center justify-center text-brand-green shrink-0 mt-0.5">
-                    <CheckCircle2 className="w-5 h-5" />
-                  </div>
-                  <div className="space-y-1">
-                    <h3 className="font-bold text-brand-dark text-base">{feat.title}</h3>
+                  <div className="space-y-4">
+                    <div className="w-12 h-12 rounded-2xl bg-brand-light border border-brand-teal/20 flex items-center justify-center text-brand-dark">
+                      <Icon className="w-6 h-6 text-brand-teal" />
+                    </div>
+                    <h3 className="text-lg font-bold text-brand-dark">{pillar.title}</h3>
                     <p className="text-xs sm:text-sm text-brand-charcoal/80 leading-relaxed">
-                      {feat.desc}
+                      {pillar.desc}
                     </p>
                   </div>
                 </div>
-              ))}
-            </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Assessment Coverage Across Microsoft Cloud Suite */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mb-12 space-y-3">
+            <span className="text-xs font-bold uppercase tracking-wider text-brand-green">
+              Coverage Scope
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-brand-dark tracking-tight">
+              500+ Automated Checks Across All Key Workloads
+            </h2>
+            <p className="text-sm sm:text-base text-brand-charcoal/80">
+              Mito queries Microsoft Graph and Management APIs securely, evaluating policies against hardened CIS Microsoft 365 Foundations and CISA baseline standards.
+            </p>
           </div>
 
-          {/* CTA Box */}
-          <div className="rounded-3xl bg-brand-dark text-white p-8 sm:p-12 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl">
-            <div className="space-y-3 text-center md:text-left relative z-10">
-              <h3 className="text-2xl sm:text-3xl font-extrabold">Ready to evaluate your tenant security posture?</h3>
-              <p className="text-gray-300 text-sm sm:text-base max-w-xl">
-                Book a personalized 30-minute demonstration or connect directly with the Mito application team.
+          <div className="space-y-4">
+            {ASSESSMENT_CATEGORIES.map((cat, idx) => (
+              <div
+                key={idx}
+                className="bg-gray-50 hover:bg-white rounded-2xl p-6 border border-gray-200/90 hover:border-brand-teal/30 hover:shadow-lg transition-all flex flex-col md:flex-row md:items-center justify-between gap-4"
+              >
+                <div className="space-y-1 md:max-w-xl">
+                  <div className="flex items-center gap-3">
+                    <h3 className="text-base font-bold text-brand-dark">{cat.name}</h3>
+                    <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800">
+                      {cat.checks}
+                    </span>
+                  </div>
+                  <p className="text-xs sm:text-sm text-brand-charcoal/75 leading-relaxed">
+                    {cat.highlight}
+                  </p>
+                </div>
+
+                <div className="shrink-0 flex items-center gap-2 text-xs font-semibold text-brand-teal">
+                  <CheckCircle2 className="w-4 h-4 text-brand-green" />
+                  <span>Continuous Daily Review</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Box */}
+      <section className="pb-16 pt-4 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="rounded-3xl bg-brand-dark text-white p-8 sm:p-14 relative overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-8 shadow-2xl">
+            {/* Background lighting */}
+            <div className="absolute top-0 right-0 w-80 h-80 bg-brand-teal/20 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-80 h-80 bg-brand-gold/15 rounded-full blur-3xl pointer-events-none" />
+
+            <div className="space-y-3 text-center lg:text-left relative z-10 max-w-xl">
+              <span className="text-xs font-bold uppercase tracking-wider text-brand-gold">
+                Get Started with Mito
+              </span>
+              <h3 className="text-2xl sm:text-4xl font-extrabold tracking-tight">
+                Benchmark Your Tenant Security Posture in Minutes.
+              </h3>
+              <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
+                Connect your tenant in under 10 minutes with 100% read-only safety, or schedule a personalized walkthrough with our cloud architects.
               </p>
             </div>
 
-            <div className="flex flex-wrap items-center gap-4 relative z-10">
+            <div className="flex flex-wrap items-center justify-center gap-4 relative z-10">
               <a
                 href={COMPANY_INFO.demoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="gradient-button text-white font-semibold px-6 py-3.5 rounded-xl shadow-md flex items-center gap-2 text-sm"
+                className="gradient-button text-white font-semibold px-7 py-4 rounded-xl shadow-md flex items-center gap-2 text-sm sm:text-base hover:shadow-lg transition-all"
               >
                 <Calendar className="w-4 h-4" />
                 <span>Schedule 30-Min Demo</span>
               </a>
 
               <a
-                href="http://mito.virtualpetals.com/"
+                href="https://mito-app.virtualpetals.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white text-brand-dark font-semibold px-6 py-3.5 rounded-xl hover:bg-gray-100 transition-colors flex items-center gap-1.5 text-sm"
+                className="bg-white text-brand-dark font-semibold px-7 py-4 rounded-xl hover:bg-gray-100 transition-colors flex items-center gap-2 text-sm sm:text-base"
               >
-                <span>Launch Mito</span>
+                <span>Launch Mito Portal</span>
                 <ExternalLink className="w-4 h-4 text-brand-teal" />
               </a>
             </div>

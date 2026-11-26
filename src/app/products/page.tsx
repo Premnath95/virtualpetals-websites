@@ -60,7 +60,7 @@ export default function ProductsOverviewPage() {
                 <div className="space-y-2.5 pt-2 text-sm text-brand-dark font-medium">
                   <div className="flex items-center gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-brand-green" />
-                    <span>400+ automated daily tenant checks</span>
+                    <span>500+ automated daily tenant checks</span>
                   </div>
                   <div className="flex items-center gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-brand-teal" />
@@ -78,7 +78,7 @@ export default function ProductsOverviewPage() {
 
                 <div className="pt-4 flex flex-wrap items-center gap-4">
                   <a
-                    href="http://mito.virtualpetals.com/"
+                    href="https://mito-app.virtualpetals.com/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="gradient-button text-white font-semibold px-6 py-3.5 rounded-xl shadow-md flex items-center gap-2 text-sm"
@@ -111,7 +111,7 @@ export default function ProductsOverviewPage() {
               <div className="lg:col-span-6">
                 <div className="rounded-2xl border border-gray-200 overflow-hidden shadow-lg bg-gray-50">
                   <div className="bg-gray-100 px-4 py-2 border-b border-gray-200 flex items-center justify-between text-xs text-gray-500 font-mono">
-                    <span>mito.virtualpetals.com</span>
+                    <span>mito-app.virtualpetals.com</span>
                     <span className="text-brand-green font-semibold">Active UI</span>
                   </div>
                   <div className="relative aspect-[16/10] w-full">

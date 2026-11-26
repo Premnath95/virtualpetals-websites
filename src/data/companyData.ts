@@ -1,33 +1,33 @@
 export const COMPANY_INFO = {
   name: "VIRTUAL PETALS",
   legalName: "Virtual Petals Private Limited",
-  tagline: "Empowering Businesses Through Intelligent Technology.",
+  tagline: "Peace of Mind as a Service – Enterprise IT Infrastructure, Cloud & Cybersecurity",
   description:
-    "Virtual Petals delivers innovative cloud solutions, Microsoft technologies, cybersecurity and modern IT services that help businesses transform, scale and succeed.",
+    "Virtual Petals delivers innovative cloud solutions, Microsoft technologies, cybersecurity and modern IT services that help businesses transform, scale and succeed with enterprise reliability.",
   mission:
-    "To empower businesses through reliable, secure and innovative technology solutions.",
+    "To empower businesses through reliable, secure and innovative technology solutions that protect confidentiality, availability, and integrity.",
   vision:
-    "To become a trusted technology partner for organisations worldwide.",
+    "To become a globally trusted technology partner for organisations seeking excellence in cloud infrastructure and cybersecurity.",
   values: [
     {
-      title: "Innovation",
-      description: "Constantly evolving with modern cloud and AI practices.",
+      title: "Confidentiality & Security",
+      description: "Implementing Zero Trust architecture to safeguard mission-critical business data.",
     },
     {
-      title: "Integrity",
-      description: "Transparent, honest, and ethical technology consulting.",
+      title: "High Availability & Resilience",
+      description: "Engineering fault-tolerant cloud environments backed by enterprise SLAs.",
     },
     {
-      title: "Customer Success",
-      description: "Dedicated to outcomes that drive tangible business value.",
+      title: "Data Integrity & Governance",
+      description: "Rigorous compliance baselines across Microsoft 365, Azure, and AWS workloads.",
     },
     {
       title: "Technical Excellence",
-      description: "Rigorous architectural standards and engineering discipline.",
+      description: "Certified cloud engineers adhering strictly to Well-Architected frameworks.",
     },
     {
-      title: "Continuous Improvement",
-      description: "Iterative enhancements to security, performance, and processes.",
+      title: "Customer Commitment",
+      description: "Dedicated 24/7 proactive monitoring and transparent, accountable partnership.",
     },
   ],
   contacts: {
@@ -57,15 +57,15 @@ export const COMPANY_INFO = {
   },
   product: {
     name: "Mito",
-    headline: "Introducing Mito – Smarter Microsoft 365 Security & Compliance.",
+    headline: "Introducing Mito – Microsoft 365 Security Assessment Platform",
     description:
-      "Mito helps organisations assess their Microsoft 365 environments, identify security gaps, discover risky configurations and understand compliance concerns through automated security assessments.",
-    category: "Microsoft 365 Security & Compliance Platform",
-    websiteUrl: "http://mito.virtualpetals.com/",
-    appUrl: "http://mito.virtualpetals.com/",
+      "Mito helps organisations assess their Microsoft 365 environments, discover risky configurations, and ensure compliance through 500+ automated read-only security checks.",
+    category: "Microsoft 365 Security Assessment Platform",
+    websiteUrl: "https://mito-app.virtualpetals.com/",
+    appUrl: "https://mito-app.virtualpetals.com/",
     demoUrl: "https://calendly.com/virtualpetals/30min",
     supportEmail: "mito@virtualpetals.com",
-    checksCount: "400+",
+    checksCount: "500+",
   },
   partner: {
     name: "NETFUXION PRO",
@@ -78,5 +78,5 @@ export const COMPANY_INFO = {
     logoPath: "/partners/netfuxion-pro-logo.png",
   },
   demoUrl: "https://calendly.com/virtualpetals/30min",
-  copyright: "© 2026 Virtual Petals. All Rights Reserved.",
+  copyright: "© 2026 Virtual Petals Private Limited. All Rights Reserved.",
 };

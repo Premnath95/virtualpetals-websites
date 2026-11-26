@@ -9,14 +9,23 @@ module.exports = {
     extend: {
       colors: {
         brand: {
+          primary: "#0D382E", // Deep Dark Green (Procain Primary)
+          primaryHover: "#092921",
+          dark: "#123B32", // Primary Dark Green
+          teal: "#12B8A6", // Secondary Teal
+          tealDark: "#0D9488",
+          tealLight: "#CCFBF1",
+          charcoal: "#253B38", // Dark Charcoal body text
+          darkCharcoal: "#172624",
+          light: "#F3FAF6", // Crisp light green accent
+          grey: "#F8FAFC",
           green: "#35A853",
-          teal: "#12B8A6",
-          dark: "#123B32",
-          light: "#F3FAF6",
-          charcoal: "#253B38",
-          grey: "#F5F7F6",
           greenDark: "#2B8742",
-          tealDark: "#0F9B8C",
+          // Accent subtle gold lighting inspired by Procain corporate aesthetic
+          gold: "#D4AF37",
+          goldLight: "#FEF9C3",
+          goldDark: "#B45309",
+          goldGlow: "rgba(212, 175, 55, 0.2)",
         },
       },
       fontFamily: {
@@ -29,6 +38,8 @@ module.exports = {
         subtle: "0 1px 3px 0 rgba(18, 59, 50, 0.05), 0 1px 2px -1px rgba(18, 59, 50, 0.05)",
         card: "0 4px 24px -2px rgba(18, 59, 50, 0.08)",
         cardHover: "0 16px 36px -4px rgba(18, 59, 50, 0.14)",
+        goldGlow: "0 0 25px -3px rgba(212, 175, 55, 0.25)",
+        tealGlow: "0 0 25px -3px rgba(18, 184, 166, 0.25)",
       },
       borderRadius: {
         xl: "1rem",

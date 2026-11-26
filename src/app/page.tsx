@@ -1,51 +1,59 @@
 import React from "react";
 import HeroSection from "@/components/HeroSection";
-import CompanyStorySection from "@/components/CompanyStorySection";
-import EnterpriseServicesSection from "@/components/EnterpriseServicesSection";
-import BusinessOutcomesSection from "@/components/BusinessOutcomesSection";
-import MitoShowcase from "@/components/MitoShowcase";
+import PartnerShowcase from "@/components/PartnerShowcase";
+import AboutSection from "@/components/AboutSection";
+import StatisticsSection from "@/components/StatisticsSection";
+import ServicesGridSection from "@/components/ServicesGridSection";
+import WorkingProcessSection from "@/components/WorkingProcessSection";
+import WhyChooseSection from "@/components/WhyChooseSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
+import IndustriesSection from "@/components/IndustriesSection";
+import TechPlatformsSection from "@/components/TechPlatformsSection";
+import MitoFeaturedSection from "@/components/MitoFeaturedSection";
 import PartnerSection from "@/components/PartnerSection";
-import TechEcosystem from "@/components/TechEcosystem";
-import InsightsSection from "@/components/InsightsSection";
-import WhyVirtualPetalsSection from "@/components/WhyVirtualPetalsSection";
-import ContactForm from "@/components/ContactForm";
+import ContactBookingSection from "@/components/ContactBookingSection";
 
 export default function HomePage() {
   return (
     <>
-      {/* 1. Hero Section – Enterprise Editorial Hero */}
+      {/* 1. Hero Section – Enterprise Headline & 3D Visuals */}
       <HeroSection />
 
-      {/* 2. Who We Are – Company Story (Section 6) */}
-      <CompanyStorySection />
+      {/* 2. Client & Technology Partner Showcase */}
+      <PartnerShowcase />
 
-      {/* 3. What We Do – Enterprise Service Architecture (Section 7) */}
-      <EnterpriseServicesSection />
+      {/* 3. About Virtual Petals – Confidentiality, Availability & Integrity */}
+      <AboutSection />
 
-      {/* 4. How We Help – Business Outcomes 01-04 (Section 8) */}
-      <BusinessOutcomesSection />
+      {/* 4. Company Statistics Section (Only Verified Figures) */}
+      <StatisticsSection />
 
-      {/* 5. Proprietary SaaS Product – MITO Showcase (Section 9) */}
-      <MitoShowcase />
+      {/* 5. Our Services Section with Premium Service Cards */}
+      <ServicesGridSection />
 
-      {/* 6. Client Success Stories – 15 Authentic Testimonials (Section 10) */}
+      {/* 6. Our Working Process – Discover, Design, Implement, Manage */}
+      <WorkingProcessSection />
+
+      {/* 7. Why Choose Virtual Petals */}
+      <WhyChooseSection />
+
+      {/* 8. Client Testimonials (15 Genuine Stories) */}
       <TestimonialsSection />
 
-      {/* 7. Our Business Entities – NetFuxion Pro Registered Entity (Section 11) */}
+      {/* 9. Industries We Serve */}
+      <IndustriesSection />
+
+      {/* 10. Technology Partners & Platforms */}
+      <TechPlatformsSection />
+
+      {/* 11. Featured Product – Mito (Microsoft 365 Security Assessment) */}
+      <MitoFeaturedSection />
+
+      {/* 12. Our Business Entities – NetFuxion Pro */}
       <PartnerSection />
 
-      {/* 8. Technology Ecosystem & Partner Standards (Section 12) */}
-      <TechEcosystem />
-
-      {/* 9. Insights & Thought Leadership (Section 13) */}
-      <InsightsSection />
-
-      {/* 10. Why Virtual Petals – Your Technology Partner for What's Next (Section 14) */}
-      <WhyVirtualPetalsSection />
-
-      {/* 11. Enterprise Call to Action & Direct Consultation (Section 15) */}
-      <ContactForm />
+      {/* 13. Contact & Consultation Booking Section */}
+      <ContactBookingSection />
     </>
   );
 }
